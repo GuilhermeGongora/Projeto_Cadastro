@@ -17,8 +17,5 @@ namespace Projeto_Cadastro
             InitializeComponent();
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-        }
     }
 }
