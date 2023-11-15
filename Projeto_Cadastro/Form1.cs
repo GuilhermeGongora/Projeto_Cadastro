@@ -43,19 +43,21 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         private void btn_Pesquisar_Nome_Click(object sender, EventArgs e)
         {
-            string dateTimeFab = dt_fab.Text;
-            string dateTimeVal = dt_val.Text;
-            string dateTimeCad = dt_cad.Text;
-            string createTimeFab = Convert.ToDateTime(dateTimeFab).ToString("yyyy-MM-dd");
-            string createTimeVal = Convert.ToDateTime(dateTimeVal).ToString("yyyy-MM-dd");
-            string createTimeCad = Convert.ToDateTime(dateTimeCad).ToString("yyyy-MM-dd");
-            MySqlConnection conn = new MySqlConnection(MySqlClientString);
+            try
+            {
+                string dateTimeFab = dt_fab.Text;
+                string dateTimeVal = dt_val.Text;
+                string dateTimeCad = dt_cad.Text;
+                string createTimeFab = Convert.ToDateTime(dateTimeFab).ToString("yyyy-MM-dd");
+                string createTimeVal = Convert.ToDateTime(dateTimeVal).ToString("yyyy-MM-dd");
+                string createTimeCad = Convert.ToDateTime(dateTimeCad).ToString("yyyy-MM-dd");
+                MySqlConnection conn = new MySqlConnection(MySqlClientString);
                 conn.Open();
                 DataTable dt = new DataTable();
                 MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM tb_cadastro WHERE Nome_Peca LIKE  '" + nome_Peca_Pesquisa.Text + "%'", conn);
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
-                txt_cod.Text = dt.Rows[0].Field<int>("Codigo_ID").ToString();
+                txt_codigo.Text = dt.Rows[0].Field<int>("Codigo_ID").ToString();
                 createTimeCad = dt.Rows[0].Field<DateTime>("Data").ToString();
                 cmb_Status.Text = dt.Rows[0].Field<string>("Status");
                 txt_nome.Text = dt.Rows[0].Field<string>("Nome_Peca");
@@ -70,8 +72,12 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
                 createTimeVal = dt.Rows[0].Field<DateTime>("Data_Val").ToString();
                 txt_descricao.Text = dt.Rows[0].Field<string>("Descricao");
                 cmb_unidade.Text = dt.Rows[0].Field<string>("Unidade");
-                //btn_novo_Click)btn_novo, e);
+            }
+            catch 
+            {           
                 MessageBox.Show("Produto não cadastrado!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+                //btn_novo_Click)btn_novo, e);
         }
     }
 }
