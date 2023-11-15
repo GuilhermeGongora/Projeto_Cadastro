@@ -72,9 +72,9 @@
             this.label19 = new System.Windows.Forms.Label();
             this.txt_valorVenda = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.btn_Pesquisar_Nome = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.nome_Peca_Pesquisa = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -90,7 +90,7 @@
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Pesquisar_Nome)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -462,9 +462,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureBox2);
+            this.groupBox1.Controls.Add(this.btn_Pesquisar_Nome);
             this.groupBox1.Controls.Add(this.label20);
-            this.groupBox1.Controls.Add(this.textBox14);
+            this.groupBox1.Controls.Add(this.nome_Peca_Pesquisa);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Blue;
             this.groupBox1.Location = new System.Drawing.Point(414, 207);
@@ -474,13 +474,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa de Peças";
             // 
-            // pictureBox2
+            // btn_Pesquisar_Nome
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(255, 19);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(45, 26);
-            this.pictureBox2.TabIndex = 39;
-            this.pictureBox2.TabStop = false;
+            this.btn_Pesquisar_Nome.Location = new System.Drawing.Point(255, 19);
+            this.btn_Pesquisar_Nome.Name = "btn_Pesquisar_Nome";
+            this.btn_Pesquisar_Nome.Size = new System.Drawing.Size(45, 26);
+            this.btn_Pesquisar_Nome.TabIndex = 39;
+            this.btn_Pesquisar_Nome.TabStop = false;
+            this.btn_Pesquisar_Nome.Click += new System.EventHandler(this.btn_Pesquisar_Nome_Click);
             // 
             // label20
             // 
@@ -492,12 +493,12 @@
             this.label20.TabIndex = 17;
             this.label20.Text = "Peça:\r\n";
             // 
-            // textBox14
+            // nome_Peca_Pesquisa
             // 
-            this.textBox14.Location = new System.Drawing.Point(72, 19);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(171, 26);
-            this.textBox14.TabIndex = 16;
+            this.nome_Peca_Pesquisa.Location = new System.Drawing.Point(72, 19);
+            this.nome_Peca_Pesquisa.Name = "nome_Peca_Pesquisa";
+            this.nome_Peca_Pesquisa.Size = new System.Drawing.Size(171, 26);
+            this.nome_Peca_Pesquisa.TabIndex = 16;
             // 
             // groupBox2
             // 
@@ -673,7 +674,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Pesquisar_Nome)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -731,9 +732,9 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txt_valorVenda;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox btn_Pesquisar_Nome;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox14;
+        private System.Windows.Forms.TextBox nome_Peca_Pesquisa;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
