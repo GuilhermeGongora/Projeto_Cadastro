@@ -22,24 +22,33 @@ namespace Projeto_Cadastro
 		}
 		private void btn_insert_Click(object sender, EventArgs e)
 		{
-			string dateTimeFab = dt_fab.Text;
-			string dateTimeVal = dt_val.Text;
-			string dateTimeCad = dt_cad.Text;
-			string createTimeFab = Convert.ToDateTime(dateTimeFab).ToString("yyyy-MM-dd");
-            string createTimeVal = Convert.ToDateTime(dateTimeVal).ToString("yyyy-MM-dd");
-            string createTimeCad = Convert.ToDateTime(dateTimeCad).ToString("yyyy-MM-dd");
-            string sql = "INSERT INTO tb_cadastro(Codigo_ID, Data, Status, Nome_Peca, Tamanho, Peso, Volume, Quantidade, Quantidade_Minima, Valor_Compra, Valor_Venda, Data_Fab, Data_Val, Descricao, Unidade)" +
-				"VALUES('" + txt_codigo.Text + "','" + createTimeCad.ToString() + "','" + cmb_Status.Text + "','" + txt_nome.Text +
-				 "','" + txt_tamanho.Text + "','" + txt_peso.Text + "','" + txt_volume.Text + "','" + txt_quantidade.Text + "','" + txt_quant_min.Text + "','" + txt_valorCompra.Text + "','" + txt_valorVenda.Text + "','" + createTimeFab.ToString() + "','" + createTimeVal.ToString()+ "','" + txt_descricao.Text + "','" + cmb_unidade.Text + "')";
-			MySqlConnection conn = new MySqlConnection(MySqlClientString);
-			conn.Open();
-			MySqlCommand cmd = new MySqlCommand();
-			cmd.Connection = conn;
-			cmd.CommandText = sql;
-			cmd.ExecuteNonQuery();
-			MessageBox.Show("Produto gravado com sucesso", "Alerta",
+            if (txt_codigo.Text == "")
+            {
+                MessageBox.Show("Não foi possível cadastrar!", "Alerta",
 MessageBoxButtons.OK, MessageBoxIcon.Information);
-		}
+            }
+            else
+            {
+
+                string dateTimeFab = dt_fab.Text;
+                string dateTimeVal = dt_val.Text;
+                string dateTimeCad = dt_cad.Text;
+                string createTimeFab = Convert.ToDateTime(dateTimeFab).ToString("yyyy-MM-dd");
+                string createTimeVal = Convert.ToDateTime(dateTimeVal).ToString("yyyy-MM-dd");
+                string createTimeCad = Convert.ToDateTime(dateTimeCad).ToString("yyyy-MM-dd");
+                string sql = "INSERT INTO tb_cadastro(Codigo_ID, Data, Status, Nome_Peca, Tamanho, Peso, Volume, Quantidade, Quantidade_Minima, Valor_Compra, Valor_Venda, Data_Fab, Data_Val, Descricao, Unidade)" +
+                    "VALUES('" + txt_codigo.Text + "','" + createTimeCad.ToString() + "','" + cmb_Status.Text + "','" + txt_nome.Text +
+                     "','" + txt_tamanho.Text + "','" + txt_peso.Text + "','" + txt_volume.Text + "','" + txt_quantidade.Text + "','" + txt_quant_min.Text + "','" + txt_valorCompra.Text + "','" + txt_valorVenda.Text + "','" + createTimeFab.ToString() + "','" + createTimeVal.ToString() + "','" + txt_descricao.Text + "','" + cmb_unidade.Text + "')";
+                MySqlConnection conn = new MySqlConnection(MySqlClientString);
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Produto gravado com sucesso", "Alerta",
+    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+					}
 
         private void btn_Pesquisar_Nome_Click(object sender, EventArgs e)
         {
@@ -58,7 +67,7 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
                 txt_codigo.Text = dt.Rows[0].Field<int>("Codigo_ID").ToString();
-                createTimeCad = dt.Rows[0].Field<DateTime>("Data").ToString();
+                dt_cad.Text =  dt.Rows[0].Field<DateTime>("Data").ToString();
                 cmb_Status.Text = dt.Rows[0].Field<string>("Status");
                 txt_nome.Text = dt.Rows[0].Field<string>("Nome_Peca");
                 txt_tamanho.Text = dt.Rows[0].Field<double>("Tamanho").ToString();
@@ -68,8 +77,8 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_quant_min.Text = dt.Rows[0].Field<int>("Quantidade_Minima").ToString();
                 txt_valorCompra.Text = dt.Rows[0].Field<double>("Valor_Compra").ToString();
                 txt_valorVenda.Text = dt.Rows[0].Field<double>("Valor_venda").ToString();
-                createTimeFab = dt.Rows[0].Field<DateTime>("Data_Fab").ToString();
-                createTimeVal = dt.Rows[0].Field<DateTime>("Data_Val").ToString();
+                dt_fab.Text = dt.Rows[0].Field<DateTime>("Data_Fab").ToString();
+                dt_val.Text = dt.Rows[0].Field<DateTime>("Data_Val").ToString();
                 txt_descricao.Text = dt.Rows[0].Field<string>("Descricao");
                 cmb_unidade.Text = dt.Rows[0].Field<string>("Unidade");
             }
@@ -134,6 +143,8 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             dt_val.Text = DateTime.Now.ToString("dd/MM/yyyy");
             cmb_Status.Text = "Selecione...";
             cmb_unidade.Text = "Selecione...";
+            nome_Peca_Pesquisa.Text = "";
+            dataGridView1.Columns.Clear();
             txt_codigo.Focus();
         }
 

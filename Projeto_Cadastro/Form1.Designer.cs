@@ -177,11 +177,13 @@
             // 
             // dt_cad
             // 
+            this.dt_cad.CustomFormat = "yyyy-MM-dd";
             this.dt_cad.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dt_cad.Location = new System.Drawing.Point(146, 46);
             this.dt_cad.Name = "dt_cad";
             this.dt_cad.Size = new System.Drawing.Size(82, 20);
             this.dt_cad.TabIndex = 4;
+            this.dt_cad.Value = new System.DateTime(2023, 11, 15, 20, 16, 24, 0);
             // 
             // txt_descricao
             // 
