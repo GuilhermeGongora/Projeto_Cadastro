@@ -20,21 +20,18 @@ namespace Projeto_Cadastro
 		{
 			InitializeComponent();
 		}
-
-		public string Formatar()
+		private void btn_insert_Click(object sender, EventArgs e)
 		{
 			string dateTimeFab = dt_fab.Text;
 			string dateTimeVal = dt_val.Text;
 			string dateTimeCad = dt_cad.Text;
-		string createddate = Convert.ToDateTime(dateTimeCad).ToString("yyyy-MM-dd");
-			return createddate.ToString();    
-		}
-		private void btn_insert_Click(object sender, EventArgs e)
-		{
-			
-			string sql = "INSERT INTO tb_cadastro(Codigo_ID, Data, Status, Nome_Peca, Tamanho, Peso, Volume, Quantidade, Quantidade_Minima, Valor_Compra, Valor_Venda, Data_Fab, Data_Val, Descricao, Unidade)" +
-				"VALUES('" + txt_codigo.Text + "','" + Formatar() + "','" + check_status.Checked + "','" + txt_nome.Text +
-				 "','" + txt_tamanho.Text + "','" + txt_peso.Text + "','" + txt_volume.Text + "','" + txt_quantidade.Text + "','" + txt_quant_min.Text + "','" + txt_valorCompra.Text + "','" + txt_valorVenda.Text + "','" + dt_fab.Text + "','" + dt_val.Text + "','" + txt_descricao.Text + "','" + cmb_unidade.Text + "')";
+			string createTimeFab = Convert.ToDateTime(dateTimeFab).ToString("yyyy-MM-dd");
+            string createTimeVal = Convert.ToDateTime(dateTimeVal).ToString("yyyy-MM-dd");
+            string createTimeCad = Convert.ToDateTime(dateTimeCad).ToString("yyyy-MM-dd");
+            Convert.ToDateTime(dt_fab.Text).ToString("yyyy-MM-dd");
+            string sql = "INSERT INTO tb_cadastro(Codigo_ID, Data, Status, Nome_Peca, Tamanho, Peso, Volume, Quantidade, Quantidade_Minima, Valor_Compra, Valor_Venda, Data_Fab, Data_Val, Descricao, Unidade)" +
+				"VALUES('" + txt_codigo.Text + "','" + createTimeCad.ToString() + "','" + check_status.Checked + "','" + txt_nome.Text +
+				 "','" + txt_tamanho.Text + "','" + txt_peso.Text + "','" + txt_volume.Text + "','" + txt_quantidade.Text + "','" + txt_quant_min.Text + "','" + txt_valorCompra.Text + "','" + txt_valorVenda.Text + "','" + createTimeFab.ToString() + "','" + createTimeVal.ToString()+ "','" + txt_descricao.Text + "','" + cmb_unidade.Text + "')";
 			MySqlConnection conn = new MySqlConnection(MysqlClientString);
 			conn.Open();
 			MySqlCommand cmd = new MySqlCommand();
