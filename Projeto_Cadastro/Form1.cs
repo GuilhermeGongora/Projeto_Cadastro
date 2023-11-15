@@ -29,7 +29,7 @@ namespace Projeto_Cadastro
             string createTimeVal = Convert.ToDateTime(dateTimeVal).ToString("yyyy-MM-dd");
             string createTimeCad = Convert.ToDateTime(dateTimeCad).ToString("yyyy-MM-dd");
             string sql = "INSERT INTO tb_cadastro(Codigo_ID, Data, Status, Nome_Peca, Tamanho, Peso, Volume, Quantidade, Quantidade_Minima, Valor_Compra, Valor_Venda, Data_Fab, Data_Val, Descricao, Unidade)" +
-				"VALUES('" + txt_codigo.Text + "','" + createTimeCad.ToString() + "','" + check_status.Text + "','" + txt_nome.Text +
+				"VALUES('" + txt_codigo.Text + "','" + createTimeCad.ToString() + "','" + cmb_Status.Text + "','" + txt_nome.Text +
 				 "','" + txt_tamanho.Text + "','" + txt_peso.Text + "','" + txt_volume.Text + "','" + txt_quantidade.Text + "','" + txt_quant_min.Text + "','" + txt_valorCompra.Text + "','" + txt_valorVenda.Text + "','" + createTimeFab.ToString() + "','" + createTimeVal.ToString()+ "','" + txt_descricao.Text + "','" + cmb_unidade.Text + "')";
 			MySqlConnection conn = new MySqlConnection(MySqlClientString);
 			conn.Open();
@@ -57,7 +57,7 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridView1.DataSource = dt;
                 txt_cod.Text = dt.Rows[0].Field<int>("Codigo_ID").ToString();
                 createTimeCad = dt.Rows[0].Field<DateTime>("Data").ToString();
-            check_status.Text = dt.Rows[0].Field<int>("Status").ToString();
+                cmb_Status.Text = dt.Rows[0].Field<string>("Status");
                 txt_nome.Text = dt.Rows[0].Field<string>("Nome_Peca");
                 txt_tamanho.Text = dt.Rows[0].Field<double>("Tamanho").ToString();
                 txt_peso.Text = dt.Rows[0].Field<double>("Peso").ToString();

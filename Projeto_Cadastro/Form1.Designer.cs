@@ -37,7 +37,6 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.check_status = new System.Windows.Forms.CheckBox();
             this.dt_cad = new System.Windows.Forms.DateTimePicker();
             this.txt_descricao = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -87,6 +86,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txt_codigo = new System.Windows.Forms.TextBox();
             this.cmb_unidade = new System.Windows.Forms.ComboBox();
+            this.cmb_Status = new System.Windows.Forms.ComboBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -176,16 +177,6 @@
             this.label2.Size = new System.Drawing.Size(90, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Data do Cadastro";
-            // 
-            // check_status
-            // 
-            this.check_status.AutoSize = true;
-            this.check_status.Location = new System.Drawing.Point(272, 45);
-            this.check_status.Name = "check_status";
-            this.check_status.Size = new System.Drawing.Size(83, 17);
-            this.check_status.TabIndex = 3;
-            this.check_status.Text = "Bloqueada?";
-            this.check_status.UseVisualStyleBackColor = true;
             // 
             // dt_cad
             // 
@@ -615,12 +606,34 @@
             this.cmb_unidade.Size = new System.Drawing.Size(67, 21);
             this.cmb_unidade.TabIndex = 45;
             // 
+            // cmb_Status
+            // 
+            this.cmb_Status.FormattingEnabled = true;
+            this.cmb_Status.Items.AddRange(new object[] {
+            "SIM",
+            "NÃO"});
+            this.cmb_Status.Location = new System.Drawing.Point(332, 42);
+            this.cmb_Status.Name = "cmb_Status";
+            this.cmb_Status.Size = new System.Drawing.Size(67, 21);
+            this.cmb_Status.TabIndex = 46;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(262, 45);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(64, 13);
+            this.label23.TabIndex = 47;
+            this.label23.Text = "Bloqueada?";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(770, 516);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.cmb_Status);
             this.Controls.Add(this.cmb_unidade);
             this.Controls.Add(this.txt_codigo);
             this.Controls.Add(this.button1);
@@ -662,7 +675,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_descricao);
             this.Controls.Add(this.dt_cad);
-            this.Controls.Add(this.check_status);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
@@ -697,7 +709,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox check_status;
         private System.Windows.Forms.DateTimePicker dt_cad;
         private System.Windows.Forms.TextBox txt_descricao;
         private System.Windows.Forms.Label label3;
@@ -747,6 +758,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txt_codigo;
         private System.Windows.Forms.ComboBox cmb_unidade;
+        private System.Windows.Forms.ComboBox cmb_Status;
+        private System.Windows.Forms.Label label23;
     }
 }
 
