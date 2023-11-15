@@ -31,22 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_insert = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.btn_delete = new System.Windows.Forms.ToolStripButton();
+            this.btn_select = new System.Windows.Forms.ToolStripButton();
+            this.btn_update = new System.Windows.Forms.ToolStripButton();
+            this.btn_limpar = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dt_cad = new System.Windows.Forms.DateTimePicker();
             this.txt_descricao = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_razao = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt_fantasia = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt_cod = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -88,8 +81,8 @@
             this.cmb_unidade = new System.Windows.Forms.ComboBox();
             this.cmb_Status = new System.Windows.Forms.ComboBox();
             this.label23 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Pesquisar_Nome)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -101,16 +94,17 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.AutoSize = false;
             this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_insert,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripButton5});
+            this.btn_delete,
+            this.btn_select,
+            this.btn_update,
+            this.btn_limpar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(770, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(770, 28);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -120,45 +114,48 @@
             this.btn_insert.Image = ((System.Drawing.Image)(resources.GetObject("btn_insert.Image")));
             this.btn_insert.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_insert.Name = "btn_insert";
-            this.btn_insert.Size = new System.Drawing.Size(23, 22);
+            this.btn_insert.Size = new System.Drawing.Size(23, 25);
             this.btn_insert.Text = "btn_insert";
             this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click);
             // 
-            // toolStripButton2
+            // btn_delete
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.btn_delete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_delete.Image = ((System.Drawing.Image)(resources.GetObject("btn_delete.Image")));
+            this.btn_delete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(23, 25);
+            this.btn_delete.Text = "toolStripButton2";
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click);
             // 
-            // toolStripButton3
+            // btn_select
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "toolStripButton3";
+            this.btn_select.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_select.Image = ((System.Drawing.Image)(resources.GetObject("btn_select.Image")));
+            this.btn_select.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_select.Name = "btn_select";
+            this.btn_select.Size = new System.Drawing.Size(23, 25);
+            this.btn_select.Text = "toolStripButton3";
             // 
-            // toolStripButton4
+            // btn_update
             // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "toolStripButton4";
+            this.btn_update.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_update.Image = ((System.Drawing.Image)(resources.GetObject("btn_update.Image")));
+            this.btn_update.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(23, 25);
+            this.btn_update.Text = "toolStripButton4";
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
-            // toolStripButton5
+            // btn_limpar
             // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton5.Text = "toolStripButton5";
+            this.btn_limpar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_limpar.Image = ((System.Drawing.Image)(resources.GetObject("btn_limpar.Image")));
+            this.btn_limpar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_limpar.Name = "btn_limpar";
+            this.btn_limpar.Size = new System.Drawing.Size(23, 25);
+            this.btn_limpar.Text = "toolStripButton5";
+            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
             // 
             // label1
             // 
@@ -202,62 +199,6 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Descrição";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(138, 102);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Razão Fornecedor";
-            // 
-            // txt_razao
-            // 
-            this.txt_razao.Location = new System.Drawing.Point(141, 118);
-            this.txt_razao.Name = "txt_razao";
-            this.txt_razao.Size = new System.Drawing.Size(171, 20);
-            this.txt_razao.TabIndex = 7;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(315, 102);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Nome Fanatasia";
-            // 
-            // txt_fantasia
-            // 
-            this.txt_fantasia.Location = new System.Drawing.Point(318, 118);
-            this.txt_fantasia.Name = "txt_fantasia";
-            this.txt_fantasia.Size = new System.Drawing.Size(171, 20);
-            this.txt_fantasia.TabIndex = 9;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 102);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(86, 13);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Cod. Fornecedor";
-            // 
-            // txt_cod
-            // 
-            this.txt_cod.Location = new System.Drawing.Point(29, 118);
-            this.txt_cod.Name = "txt_cod";
-            this.txt_cod.Size = new System.Drawing.Size(43, 20);
-            this.txt_cod.TabIndex = 11;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(78, 118);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(45, 20);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -277,7 +218,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(26, 155);
+            this.label8.Location = new System.Drawing.Point(27, 119);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 13);
             this.label8.TabIndex = 17;
@@ -285,7 +226,7 @@
             // 
             // txt_tamanho
             // 
-            this.txt_tamanho.Location = new System.Drawing.Point(29, 171);
+            this.txt_tamanho.Location = new System.Drawing.Point(30, 135);
             this.txt_tamanho.Name = "txt_tamanho";
             this.txt_tamanho.Size = new System.Drawing.Size(43, 20);
             this.txt_tamanho.TabIndex = 16;
@@ -293,7 +234,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(84, 155);
+            this.label9.Location = new System.Drawing.Point(85, 119);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(31, 13);
             this.label9.TabIndex = 19;
@@ -301,7 +242,7 @@
             // 
             // txt_peso
             // 
-            this.txt_peso.Location = new System.Drawing.Point(87, 171);
+            this.txt_peso.Location = new System.Drawing.Point(88, 135);
             this.txt_peso.Name = "txt_peso";
             this.txt_peso.Size = new System.Drawing.Size(43, 20);
             this.txt_peso.TabIndex = 18;
@@ -309,7 +250,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(147, 155);
+            this.label10.Location = new System.Drawing.Point(148, 119);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 13);
             this.label10.TabIndex = 21;
@@ -317,7 +258,7 @@
             // 
             // txt_volume
             // 
-            this.txt_volume.Location = new System.Drawing.Point(150, 171);
+            this.txt_volume.Location = new System.Drawing.Point(151, 135);
             this.txt_volume.Name = "txt_volume";
             this.txt_volume.Size = new System.Drawing.Size(43, 20);
             this.txt_volume.TabIndex = 20;
@@ -325,7 +266,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(205, 155);
+            this.label11.Location = new System.Drawing.Point(206, 119);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(47, 13);
             this.label11.TabIndex = 23;
@@ -334,7 +275,7 @@
             // dt_fab
             // 
             this.dt_fab.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt_fab.Location = new System.Drawing.Point(288, 167);
+            this.dt_fab.Location = new System.Drawing.Point(289, 131);
             this.dt_fab.Name = "dt_fab";
             this.dt_fab.Size = new System.Drawing.Size(82, 20);
             this.dt_fab.TabIndex = 24;
@@ -342,7 +283,7 @@
             // dt_val
             // 
             this.dt_val.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dt_val.Location = new System.Drawing.Point(386, 167);
+            this.dt_val.Location = new System.Drawing.Point(420, 117);
             this.dt_val.Name = "dt_val";
             this.dt_val.Size = new System.Drawing.Size(82, 20);
             this.dt_val.TabIndex = 25;
@@ -350,7 +291,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(383, 151);
+            this.label12.Location = new System.Drawing.Point(417, 101);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(74, 13);
             this.label12.TabIndex = 26;
@@ -359,7 +300,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(285, 151);
+            this.label13.Location = new System.Drawing.Point(286, 115);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(86, 13);
             this.label13.TabIndex = 27;
@@ -368,7 +309,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(26, 205);
+            this.label14.Location = new System.Drawing.Point(27, 169);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(62, 13);
             this.label14.TabIndex = 29;
@@ -376,7 +317,7 @@
             // 
             // txt_quantidade
             // 
-            this.txt_quantidade.Location = new System.Drawing.Point(29, 221);
+            this.txt_quantidade.Location = new System.Drawing.Point(30, 185);
             this.txt_quantidade.Name = "txt_quantidade";
             this.txt_quantidade.Size = new System.Drawing.Size(43, 20);
             this.txt_quantidade.TabIndex = 28;
@@ -384,7 +325,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(103, 205);
+            this.label15.Location = new System.Drawing.Point(104, 169);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(62, 13);
             this.label15.TabIndex = 31;
@@ -392,7 +333,7 @@
             // 
             // txt_quant_min
             // 
-            this.txt_quant_min.Location = new System.Drawing.Point(106, 221);
+            this.txt_quant_min.Location = new System.Drawing.Point(107, 185);
             this.txt_quant_min.Name = "txt_quant_min";
             this.txt_quant_min.Size = new System.Drawing.Size(43, 20);
             this.txt_quant_min.TabIndex = 30;
@@ -402,7 +343,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(152, 221);
+            this.label16.Location = new System.Drawing.Point(153, 185);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(29, 20);
             this.label16.TabIndex = 32;
@@ -413,7 +354,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(74, 221);
+            this.label17.Location = new System.Drawing.Point(75, 185);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(29, 20);
             this.label17.TabIndex = 33;
@@ -422,7 +363,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(205, 207);
+            this.label18.Location = new System.Drawing.Point(206, 171);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(70, 13);
             this.label18.TabIndex = 35;
@@ -430,7 +371,7 @@
             // 
             // txt_valorCompra
             // 
-            this.txt_valorCompra.Location = new System.Drawing.Point(208, 223);
+            this.txt_valorCompra.Location = new System.Drawing.Point(209, 187);
             this.txt_valorCompra.Name = "txt_valorCompra";
             this.txt_valorCompra.Size = new System.Drawing.Size(97, 20);
             this.txt_valorCompra.TabIndex = 34;
@@ -438,7 +379,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(308, 207);
+            this.label19.Location = new System.Drawing.Point(309, 171);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(65, 13);
             this.label19.TabIndex = 37;
@@ -446,7 +387,7 @@
             // 
             // txt_valorVenda
             // 
-            this.txt_valorVenda.Location = new System.Drawing.Point(311, 223);
+            this.txt_valorVenda.Location = new System.Drawing.Point(312, 187);
             this.txt_valorVenda.Name = "txt_valorVenda";
             this.txt_valorVenda.Size = new System.Drawing.Size(97, 20);
             this.txt_valorVenda.TabIndex = 36;
@@ -458,7 +399,7 @@
             this.groupBox1.Controls.Add(this.nome_Peca_Pesquisa);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Blue;
-            this.groupBox1.Location = new System.Drawing.Point(414, 207);
+            this.groupBox1.Location = new System.Drawing.Point(447, 193);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(312, 53);
             this.groupBox1.TabIndex = 38;
@@ -576,7 +517,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Location = new System.Drawing.Point(614, 131);
+            this.pictureBox3.Location = new System.Drawing.Point(647, 117);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(100, 70);
             this.pictureBox3.TabIndex = 42;
@@ -584,7 +525,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(614, 94);
+            this.button1.Location = new System.Drawing.Point(647, 80);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 24);
             this.button1.TabIndex = 43;
@@ -601,7 +542,7 @@
             // cmb_unidade
             // 
             this.cmb_unidade.FormattingEnabled = true;
-            this.cmb_unidade.Location = new System.Drawing.Point(199, 171);
+            this.cmb_unidade.Location = new System.Drawing.Point(200, 135);
             this.cmb_unidade.Name = "cmb_unidade";
             this.cmb_unidade.Size = new System.Drawing.Size(67, 21);
             this.cmb_unidade.TabIndex = 45;
@@ -625,6 +566,10 @@
             this.label23.Size = new System.Drawing.Size(64, 13);
             this.label23.TabIndex = 47;
             this.label23.Text = "Bloqueada?";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -665,13 +610,6 @@
             this.Controls.Add(this.txt_tamanho);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txt_nome);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txt_cod);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txt_fantasia);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txt_razao);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_descricao);
             this.Controls.Add(this.dt_cad);
@@ -683,7 +621,6 @@
             this.Text = "Cadastro de Peças para Empilhadeiras";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btn_Pesquisar_Nome)).EndInit();
@@ -703,22 +640,15 @@
 
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btn_insert;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
+        private System.Windows.Forms.ToolStripButton btn_delete;
+        private System.Windows.Forms.ToolStripButton btn_select;
+        private System.Windows.Forms.ToolStripButton btn_update;
+        private System.Windows.Forms.ToolStripButton btn_limpar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dt_cad;
         private System.Windows.Forms.TextBox txt_descricao;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_razao;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txt_fantasia;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_cod;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.Label label8;
@@ -760,6 +690,7 @@
         private System.Windows.Forms.ComboBox cmb_unidade;
         private System.Windows.Forms.ComboBox cmb_Status;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

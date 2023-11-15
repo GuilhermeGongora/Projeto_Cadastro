@@ -79,5 +79,91 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
                 //btn_novo_Click)btn_novo, e);
         }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string sql = "DELETE FROM tb_cadastro WHERE Codigo_ID = '" + txt_codigo.Text + "'";
+                MySqlConnection conn = new MySqlConnection(MySqlClientString);
+                MySqlCommand cmd = new MySqlCommand();
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Peça deletada com sucesso!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //btn_novo_Click)btn_novo, e);
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível deletar!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_select_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(MySqlClientString);
+            conn.Open();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter
+            ("SELECT * from tb_cadastro", conn);
+            da.Fill(dt);
+            dataGridView1.DataSource = dt;
+            dataGridView1.Columns[0].Width = 100;
+            dataGridView1.Columns[1].Width = 200;
+            dataGridView1.Columns[2].Width = 200;
+            dataGridView1.Columns[3].Width = 200;
+            dataGridView1.Columns[4].Width = 200;
+            dataGridView1.Columns[5].Width = 400;
+        }
+
+        private void btn_limpar_Click(object sender, EventArgs e)
+        {
+            txt_codigo.Clear();
+            txt_descricao.Clear();
+            txt_nome.Clear();
+            txt_peso.Clear();
+            txt_quantidade.Clear();
+            txt_quant_min.Clear();
+            txt_tamanho.Clear();
+            txt_valorCompra.Clear();
+            txt_valorVenda.Clear();
+            txt_volume.Clear();
+            dt_cad.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            dt_fab.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            dt_val.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            cmb_Status.Text = "Selecione...";
+            cmb_unidade.Text = "Selecione...";
+            txt_codigo.Focus();
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string dateTimeFab = dt_fab.Text;
+                string dateTimeVal = dt_val.Text;
+                string dateTimeCad = dt_cad.Text;
+                string createTimeFab = Convert.ToDateTime(dateTimeFab).ToString("yyyy-MM-dd");
+                string createTimeVal = Convert.ToDateTime(dateTimeVal).ToString("yyyy-MM-dd");
+                string createTimeCad = Convert.ToDateTime(dateTimeCad).ToString("yyyy-MM-dd");
+                string sql = "UPDATE tb_cadastro SET Data = '" + createTimeCad.ToString() + "', Status = '" + cmb_Status.Text + "', Nome_Peca = '" + txt_nome.Text + "', Tamanho = '" + txt_tamanho.Text +
+                    "', Peso = '" + txt_peso.Text + "', Volume = '" + txt_volume.Text + "', Quantidade = '" + txt_quantidade.Text + "', Quantidade_Minima = '"
+                    + txt_quant_min.Text + "', Valor_Compra = '" + txt_valorCompra.Text + "', Valor_Venda = '" + txt_valorVenda.Text + "', Data_Fab = '" + createTimeFab.ToString() + "', Data_Val = '" + createTimeVal.ToString() + "', Descricao = '" + txt_descricao.Text
+                    + "', Unidade = '" + cmb_unidade.Text + "' WHERE Codigo_ID = '" + txt_codigo.Text + "'";
+                MySqlConnection conn = new MySqlConnection(MySqlClientString);
+                MySqlCommand cmd = new MySqlCommand();
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Peça alterada com sucesso!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //btn_novo_Click)btn_novo, e);
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível alterar o filme", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
