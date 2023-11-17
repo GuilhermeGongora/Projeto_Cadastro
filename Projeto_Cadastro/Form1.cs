@@ -20,46 +20,44 @@ namespace Projeto_Cadastro
 		{
 			InitializeComponent();
 		}
-		private void btn_insert_Click(object sender, EventArgs e)
-		{
-            if (txt_codigo.Text == "")
-            {
-                MessageBox.Show("Não foi possível cadastrar!", "Alerta",
-MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
 
-                string dateTimeFab = dt_fab.Text;
-                string dateTimeVal = dt_val.Text;
-                string dateTimeCad = dt_cad.Text;
-                string createTimeFab = Convert.ToDateTime(dateTimeFab).ToString("yyyy-MM-dd");
-                string createTimeVal = Convert.ToDateTime(dateTimeVal).ToString("yyyy-MM-dd");
-                string createTimeCad = Convert.ToDateTime(dateTimeCad).ToString("yyyy-MM-dd");
-                string sql = "INSERT INTO tb_cadastro(Codigo_ID, Data, Status, Nome_Peca, Tamanho, Peso, Volume, Quantidade, Quantidade_Minima, Valor_Compra, Valor_Venda, Data_Fab, Data_Val, Descricao, Unidade)" +
-                    "VALUES('" + txt_codigo.Text + "','" + createTimeCad.ToString() + "','" + cmb_Status.Text + "','" + txt_nome.Text +
-                     "','" + txt_tamanho.Text + "','" + txt_peso.Text + "','" + txt_volume.Text + "','" + txt_quantidade.Text + "','" + txt_quant_min.Text + "','" + txt_valorCompra.Text + "','" + txt_valorVenda.Text + "','" + createTimeFab.ToString() + "','" + createTimeVal.ToString() + "','" + txt_descricao.Text + "','" + cmb_unidade.Text + "')";
-                MySqlConnection conn = new MySqlConnection(MySqlClientString);
-                conn.Open();
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = conn;
-                cmd.CommandText = sql;
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Produto gravado com sucesso", "Alerta",
-    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-					}
-
-        private void btn_Pesquisar_Nome_Click(object sender, EventArgs e)
+        private void btn_insert_Click_1(object sender, EventArgs e)
         {
             try
             {
-                string dateTimeFab = dt_fab.Text;
-                string dateTimeVal = dt_val.Text;
-                string dateTimeCad = dt_cad.Text;
-                string createTimeFab = Convert.ToDateTime(dateTimeFab).ToString("yyyy-MM-dd");
-                string createTimeVal = Convert.ToDateTime(dateTimeVal).ToString("yyyy-MM-dd");
-                string createTimeCad = Convert.ToDateTime(dateTimeCad).ToString("yyyy-MM-dd");
+                if (txt_codigo.Text == "" && txt_Cod_For.Text == "" && txt_Razao.Text == "" && lbl_fantasia.Text == "")
+                {
+                    MessageBox.Show("Não foi possível cadastrar!", "Alerta",
+    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    string sql = "INSERT INTO tb_cadastro(Codigo_ID, Codigo_FOR, Nome_Razao, Nome_Fts, Data, Status, Nome_Peca, Tamanho, Peso, Volume, Quantidade, Quantidade_Minima, Valor_Compra, Valor_Venda, Data_Fab, Data_Val, Descricao, Unidade)" +
+                        "VALUES('" + txt_codigo.Text + "','" + txt_Cod_For.Text + "','" + txt_Razao.Text + "','" + txt_Fantasia.Text + "','" + dt_cad.Text + "','" + cmb_Status.Text + "','" + txt_nome.Text +
+                         "','" + txt_tamanho.Text + "','" + txt_peso.Text + "','" + txt_volume.Text + "','" + txt_quantidade.Text + "','" + txt_quant_min.Text + "','" + txt_valorCompra.Text + "','" + txt_valorVenda.Text + "','" + dt_fab.Text + "','" + dt_val.Text + "','" + txt_descricao.Text + "','" + cmb_unidade.Text + "')";
+                    MySqlConnection conn = new MySqlConnection(MySqlClientString);
+                    conn.Open();
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandText = sql;
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Produto gravado com sucesso", "Alerta",
+        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível cadastrar!", "Alerta",
+   MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+         
+            
+        }
+
+        private void btn_Pesquisar_Nome_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
                 MySqlConnection conn = new MySqlConnection(MySqlClientString);
                 conn.Open();
                 DataTable dt = new DataTable();
@@ -67,7 +65,10 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
                 da.Fill(dt);
                 dataGridView1.DataSource = dt;
                 txt_codigo.Text = dt.Rows[0].Field<int>("Codigo_ID").ToString();
-                dt_cad.Text =  dt.Rows[0].Field<DateTime>("Data").ToString();
+                txt_Cod_For.Text = dt.Rows[0].Field<int>("Codigo_FOR").ToString();
+                txt_Razao.Text = dt.Rows[0].Field<string>("Nome_Razao").ToString();
+                txt_Fantasia.Text = dt.Rows[0].Field<string>("Nome_Fts").ToString();
+                dt_cad.Text = dt.Rows[0].Field<DateTime>("Data").ToString();
                 cmb_Status.Text = dt.Rows[0].Field<string>("Status");
                 txt_nome.Text = dt.Rows[0].Field<string>("Nome_Peca");
                 txt_tamanho.Text = dt.Rows[0].Field<double>("Tamanho").ToString();
@@ -82,34 +83,41 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_descricao.Text = dt.Rows[0].Field<string>("Descricao");
                 cmb_unidade.Text = dt.Rows[0].Field<string>("Unidade");
             }
-            catch 
-            {           
+            catch
+            {
                 MessageBox.Show("Produto não cadastrado!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-                //btn_novo_Click)btn_novo, e);
         }
 
-        private void btn_delete_Click(object sender, EventArgs e)
+        private void btn_delete_Click_1(object sender, EventArgs e)
         {
             try
             {
-                string sql = "DELETE FROM tb_cadastro WHERE Codigo_ID = '" + txt_codigo.Text + "'";
-                MySqlConnection conn = new MySqlConnection(MySqlClientString);
-                MySqlCommand cmd = new MySqlCommand();
-                conn.Open();
-                cmd.Connection = conn;
-                cmd.CommandText = sql;
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Peça deletada com sucesso!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //btn_novo_Click)btn_novo, e);
+                if (txt_codigo.Text == "")
+                {
+                    MessageBox.Show("Não foi possível deletar", "Alerta",
+    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    string sql = "DELETE FROM tb_cadastro WHERE Codigo_ID = '" + txt_codigo.Text + "'";
+                    MySqlConnection conn = new MySqlConnection(MySqlClientString);
+                    MySqlCommand cmd = new MySqlCommand();
+                    conn.Open();
+                    cmd.Connection = conn;
+                    cmd.CommandText = sql;
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Peça deletada com sucesso!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             catch
             {
                 MessageBox.Show("Não foi possível deletar!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
-        private void btn_select_Click(object sender, EventArgs e)
+        private void btn_select_Click_1(object sender, EventArgs e)
         {
             MySqlConnection conn = new MySqlConnection(MySqlClientString);
             conn.Open();
@@ -126,7 +134,30 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             dataGridView1.Columns[5].Width = 400;
         }
 
-        private void btn_limpar_Click(object sender, EventArgs e)
+        private void btn_update_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string sql = "UPDATE tb_cadastro SET Nome_Razao = '" + txt_Razao.Text+ "', Nome_Fts = '" + txt_Fantasia.Text  + "', Data = '" + dt_cad.Text + "', Status = '" + cmb_Status.Text + "', Nome_Peca = '" + txt_nome.Text + "', Tamanho = '" + txt_tamanho.Text +
+                    "', Peso = '" + txt_peso.Text + "', Volume = '" + txt_volume.Text + "', Quantidade = '" + txt_quantidade.Text + "', Quantidade_Minima = '"
+                    + txt_quant_min.Text + "', Valor_Compra = '" + txt_valorCompra.Text + "', Valor_Venda = '" + txt_valorVenda.Text + "', Data_Fab = '" +dt_fab.Text + "', Data_Val = '" + dt_val.Text + "', Descricao = '" + txt_descricao.Text
+                    + "', Unidade = '" + cmb_unidade.Text + "' WHERE Codigo_ID = '" + txt_codigo.Text + "'";
+                MySqlConnection conn = new MySqlConnection(MySqlClientString);
+                MySqlCommand cmd = new MySqlCommand();
+                conn.Open();
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Peça alterada com sucesso!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //btn_novo_Click)btn_novo, e);
+            }
+            catch
+            {
+                MessageBox.Show("Não foi possível alterar o filme", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_limpar_Click_1(object sender, EventArgs e)
         {
             txt_codigo.Clear();
             txt_descricao.Clear();
@@ -148,33 +179,116 @@ MessageBoxButtons.OK, MessageBoxIcon.Information);
             txt_codigo.Focus();
         }
 
-        private void btn_update_Click(object sender, EventArgs e)
+              private void pct_Insert_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string dateTimeFab = dt_fab.Text;
-                string dateTimeVal = dt_val.Text;
-                string dateTimeCad = dt_cad.Text;
-                string createTimeFab = Convert.ToDateTime(dateTimeFab).ToString("yyyy-MM-dd");
-                string createTimeVal = Convert.ToDateTime(dateTimeVal).ToString("yyyy-MM-dd");
-                string createTimeCad = Convert.ToDateTime(dateTimeCad).ToString("yyyy-MM-dd");
-                string sql = "UPDATE tb_cadastro SET Data = '" + createTimeCad.ToString() + "', Status = '" + cmb_Status.Text + "', Nome_Peca = '" + txt_nome.Text + "', Tamanho = '" + txt_tamanho.Text +
-                    "', Peso = '" + txt_peso.Text + "', Volume = '" + txt_volume.Text + "', Quantidade = '" + txt_quantidade.Text + "', Quantidade_Minima = '"
-                    + txt_quant_min.Text + "', Valor_Compra = '" + txt_valorCompra.Text + "', Valor_Venda = '" + txt_valorVenda.Text + "', Data_Fab = '" + createTimeFab.ToString() + "', Data_Val = '" + createTimeVal.ToString() + "', Descricao = '" + txt_descricao.Text
-                    + "', Unidade = '" + cmb_unidade.Text + "' WHERE Codigo_ID = '" + txt_codigo.Text + "'";
+           try
+            { 
                 MySqlConnection conn = new MySqlConnection(MySqlClientString);
-                MySqlCommand cmd = new MySqlCommand();
                 conn.Open();
-                cmd.Connection = conn;
-                cmd.CommandText = sql;
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Peça alterada com sucesso!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //btn_novo_Click)btn_novo, e);
-            }
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM tb_cadastro WHERE Nome_Razao LIKE  '" + txt_Search_Razao.Text + "%'", conn);
+                da.Fill(dt);
+                dataGridView2.DataSource = dt;
+                txt_codigo.Text = dt.Rows[0].Field<int>("Codigo_ID").ToString();
+                txt_Cod_For.Text = dt.Rows[0].Field<int>("Codigo_FOR").ToString();
+                txt_Razao.Text = dt.Rows[0].Field<string>("Nome_Razao").ToString();
+                txt_Fantasia.Text = dt.Rows[0].Field<string>("Nome_Fts").ToString();
+                dt_cad.Text = dt.Rows[0].Field<DateTime>("Data").ToString();
+                cmb_Status.Text = dt.Rows[0].Field<string>("Status");
+                txt_nome.Text = dt.Rows[0].Field<string>("Nome_Peca");
+                txt_tamanho.Text = dt.Rows[0].Field<double>("Tamanho").ToString();
+                txt_peso.Text = dt.Rows[0].Field<double>("Peso").ToString();
+                txt_volume.Text = dt.Rows[0].Field<double>("Volume").ToString();
+                txt_quantidade.Text = dt.Rows[0].Field<int>("Quantidade").ToString();
+                txt_quant_min.Text = dt.Rows[0].Field<int>("Quantidade_Minima").ToString();
+                txt_valorCompra.Text = dt.Rows[0].Field<double>("Valor_Compra").ToString();
+                txt_valorVenda.Text = dt.Rows[0].Field<double>("Valor_venda").ToString();
+                dt_fab.Text = dt.Rows[0].Field<DateTime>("Data_Fab").ToString();
+                dt_val.Text = dt.Rows[0].Field<DateTime>("Data_Val").ToString();
+                txt_descricao.Text = dt.Rows[0].Field<string>("Descricao");
+                cmb_unidade.Text = dt.Rows[0].Field<string>("Unidade");
+          }
             catch
             {
-                MessageBox.Show("Não foi possível alterar o filme", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Produto não cadastrado!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btn_carregar_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(MySqlClientString);
+            conn.Open();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter
+            ("SELECT * FROM tb_cadastro", conn);
+            da.Fill(dt);
+            dgv_lista.DataSource = dt;
+            dgv_lista.Columns[0].Width = 100;
+            dgv_lista.Columns[1].Width = 200;
+            dgv_lista.Columns[2].Width = 200;
+            dgv_lista.Columns[3].Width = 200;
+            dgv_lista.Columns[4].Width = 200;
+            dgv_lista.Columns[5].Width = 400;
+        }
+
+       
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+            printPreviewDialog1.WindowState = FormWindowState.Maximized;
+
+        }
+        int i = 0;
+        Image imagem;
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(MySqlClientString);
+            conn.Open();
+            DataTable dt = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from tb_cadastro", conn);
+            da.Fill(dt);
+            try
+            {
+                imagem = Image.FromFile(@"fotos\" + dt.Rows[i].Field<int>("Codigo_ID").ToString() + ".png");
+            }
+            catch { }
+            Font fonte = new Font("Times New Roman", 24, FontStyle.Regular, GraphicsUnit.Pixel);
+            e.Graphics.DrawString("Manutenção do Cadastro de Filmes", fonte, Brushes.Black, 240, 10);
+            e.Graphics.DrawString("Relatório Geral de Filmes", fonte, Brushes.Black, 280, 50);
+            e.Graphics.DrawString("Filmes - Séries - Documentários - Shows", fonte, Brushes.Black, 220, 100);
+            e.Graphics.DrawString("_________________________________________________________",
+            fonte, Brushes.Black, 50, 140);
+
+            e.Graphics.DrawImage(pic_image.Image = imagem, 100, 250, 650, 500);
+            e.Graphics.DrawString("Código: " + dt.Rows[i].Field<int>("Codigo_ID").ToString(), fonte, Brushes.Black, 50, 750);
+        /*    //e.Graphics.DrawString(codigo.Text, fonte, Brushes.Black, 200, 650);
+            e.Graphics.DrawString("Título: " + dt.Rows[i].Field<string>("titulo"), fonte, Brushes.Black, 50, 800);
+            //e.Graphics.DrawString(nome.Text, fonte, Brushes.Black, 200, 700);
+            e.Graphics.DrawString("Classificação: " + dt.Rows[i].Field<string>("classificacao"), fonte, Brushes.Black, 50, 850);
+            //e.Graphics.DrawString(nomeprop.Text, fonte, Brushes.Black, 200, 750);
+            e.Graphics.DrawString("Gênero: " + dt.Rows[i].Field<string>("genero"), fonte, Brushes.Black, 50, 900);
+            //e.Graphics.DrawString(pelagem.Text, fonte, Brushes.Black, 200, 800);
+            e.Graphics.DrawString("Duração: " + dt.Rows[i].Field<string>("duracao"), fonte, Brushes.Black, 50, 950);
+            //e.Graphics.DrawString(idade.Text, fonte, Brushes.Black, 200, 850);
+            e.Graphics.DrawString("Sinópse: \n" + dt.Rows[i].Field<string>("sinopse"), fonte, Brushes.Black, 50, 1000);
+            // Set up string.
+*/
+
+            //e.Graphics.DrawString(idade.Text, fonte, Brushes.Black, 200, 850);
+            e.Graphics.DrawString("___________________________________________________________",
+                fonte, Brushes.Black, 50, 1150);
+            e.Graphics.DrawString("Data de emissão do relatório: " + DateTime.Now.ToString("dd/MM/yyyy"),
+            fonte, Brushes.Black, 50, 1100);
+            if (i < (dt.Rows.Count - 1))
+            {
+                i++;
+                e.HasMorePages = true;
+            }
+        }
+
+        private void btn_relatorio_Click(object sender, EventArgs e)
+        {
+            i = 0;
+            printPreviewDialog1.ShowDialog();
         }
     }
 }
