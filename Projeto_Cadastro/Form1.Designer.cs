@@ -903,7 +903,7 @@
             this.dgv_lista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_lista.Location = new System.Drawing.Point(8, 156);
             this.dgv_lista.Name = "dgv_lista";
-            this.dgv_lista.Size = new System.Drawing.Size(734, 315);
+            this.dgv_lista.Size = new System.Drawing.Size(734, 365);
             this.dgv_lista.TabIndex = 27;
             // 
             // btn_pesquisar_titulo
@@ -913,6 +913,7 @@
             this.btn_pesquisar_titulo.Size = new System.Drawing.Size(50, 50);
             this.btn_pesquisar_titulo.TabIndex = 26;
             this.btn_pesquisar_titulo.TabStop = false;
+            this.btn_pesquisar_titulo.Click += new System.EventHandler(this.btn_pesquisar_titulo_Click);
             // 
             // pic_image
             // 

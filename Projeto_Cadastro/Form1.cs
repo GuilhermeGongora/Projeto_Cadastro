@@ -25,7 +25,7 @@ namespace Projeto_Cadastro
         {
             try
             {
-                if (txt_codigo.Text == "" && txt_Cod_For.Text == "" && txt_Razao.Text == "" && lbl_fantasia.Text == "")
+                if (txt_codigo.Text == "" || txt_Cod_For.Text == "" || txt_Razao.Text == "" || lbl_fantasia.Text == "")
                 {
                     MessageBox.Show("Não foi possível cadastrar!", "Alerta",
     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -47,7 +47,7 @@ namespace Projeto_Cadastro
             }
             catch
             {
-                MessageBox.Show("Não foi possível cadastrar!", "Alerta",
+                MessageBox.Show("Não foi possível cadastra", "Alerta",
    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
          
@@ -244,40 +244,40 @@ namespace Projeto_Cadastro
             MySqlConnection conn = new MySqlConnection(MySqlClientString);
             conn.Open();
             DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from tb_cadastro", conn);
+            MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM tb_cadastro", conn);
             da.Fill(dt);
             try
             {
                 imagem = Image.FromFile(@"fotos\" + dt.Rows[i].Field<int>("Codigo_ID").ToString() + ".png");
             }
             catch { }
-            Font fonte = new Font("Times New Roman", 24, FontStyle.Regular, GraphicsUnit.Pixel);
-            e.Graphics.DrawString("Manutenção do Cadastro de Filmes", fonte, Brushes.Black, 240, 10);
-            e.Graphics.DrawString("Relatório Geral de Filmes", fonte, Brushes.Black, 280, 50);
-            e.Graphics.DrawString("Filmes - Séries - Documentários - Shows", fonte, Brushes.Black, 220, 100);
-            e.Graphics.DrawString("_________________________________________________________",
-            fonte, Brushes.Black, 50, 140);
-
-            e.Graphics.DrawImage(pic_image.Image = imagem, 100, 250, 650, 500);
-            e.Graphics.DrawString("Código: " + dt.Rows[i].Field<int>("Codigo_ID").ToString(), fonte, Brushes.Black, 50, 750);
-        /*    //e.Graphics.DrawString(codigo.Text, fonte, Brushes.Black, 200, 650);
-            e.Graphics.DrawString("Título: " + dt.Rows[i].Field<string>("titulo"), fonte, Brushes.Black, 50, 800);
-            //e.Graphics.DrawString(nome.Text, fonte, Brushes.Black, 200, 700);
-            e.Graphics.DrawString("Classificação: " + dt.Rows[i].Field<string>("classificacao"), fonte, Brushes.Black, 50, 850);
-            //e.Graphics.DrawString(nomeprop.Text, fonte, Brushes.Black, 200, 750);
-            e.Graphics.DrawString("Gênero: " + dt.Rows[i].Field<string>("genero"), fonte, Brushes.Black, 50, 900);
-            //e.Graphics.DrawString(pelagem.Text, fonte, Brushes.Black, 200, 800);
-            e.Graphics.DrawString("Duração: " + dt.Rows[i].Field<string>("duracao"), fonte, Brushes.Black, 50, 950);
-            //e.Graphics.DrawString(idade.Text, fonte, Brushes.Black, 200, 850);
-            e.Graphics.DrawString("Sinópse: \n" + dt.Rows[i].Field<string>("sinopse"), fonte, Brushes.Black, 50, 1000);
-            // Set up string.
-*/
-
-            //e.Graphics.DrawString(idade.Text, fonte, Brushes.Black, 200, 850);
-            e.Graphics.DrawString("___________________________________________________________",
-                fonte, Brushes.Black, 50, 1150);
+            Font fonte = new Font("Times New Roman", 26, FontStyle.Regular, GraphicsUnit.Pixel);
+            e.Graphics.DrawString("Relatório Geral de Filmes", fonte, Brushes.Black, 280, 10);
+            e.Graphics.DrawString("Máquina - Peças  - Indústria - Empilhadeiras", fonte, Brushes.Black, 200, 50);
             e.Graphics.DrawString("Data de emissão do relatório: " + DateTime.Now.ToString("dd/MM/yyyy"),
-            fonte, Brushes.Black, 50, 1100);
+           fonte, Brushes.Black, 260, 90);
+            e.Graphics.DrawString("_______________________________________________________________",
+            fonte, Brushes.Black, 50, 110);
+
+            e.Graphics.DrawImage(pic_image.Image = imagem, 180, 150, 450, 300);
+            e.Graphics.DrawString("Código: " + dt.Rows[i].Field<int>("Codigo_ID").ToString(), fonte, Brushes.Black, 50, 500);
+            e.Graphics.DrawString("Código_For: " + dt.Rows[i].Field<int>("Codigo_FOR").ToString(), fonte, Brushes.Black, 50, 550);
+            e.Graphics.DrawString("Nome_Razao: " + dt.Rows[i].Field<string>("Nome_Razao").ToString(), fonte, Brushes.Black, 50, 600);
+            e.Graphics.DrawString("Nome_Fts: " + dt.Rows[i].Field<string>("Nome_Fts").ToString(), fonte, Brushes.Black, 50, 650);
+            e.Graphics.DrawString("Data: " + dt.Rows[i].Field<DateTime>("Data").ToString(), fonte, Brushes.Black, 50, 700);
+            e.Graphics.DrawString("Status: " + dt.Rows[i].Field<string>("Status"), fonte, Brushes.Black, 50, 750);
+            e.Graphics.DrawString("Nome Peça: " + dt.Rows[i].Field<string>("Nome_Peca"), fonte, Brushes.Black, 50, 800);
+            e.Graphics.DrawString("Tamanho: " + dt.Rows[i].Field<double>("Tamanho").ToString(), fonte, Brushes.Black, 50, 850);
+            e.Graphics.DrawString("Peso: " + dt.Rows[i].Field<double>("Peso").ToString(), fonte, Brushes.Black, 50, 900);
+            e.Graphics.DrawString("Volume: " + dt.Rows[i].Field<double>("Volume").ToString(), fonte, Brushes.Black, 50, 950);
+            e.Graphics.DrawString("Quantidade: " + dt.Rows[i].Field<int>("Quantidade").ToString(), fonte, Brushes.Black, 50, 1000);
+            e.Graphics.DrawString("Quantidade_Mínima: " + dt.Rows[i].Field<int>("Quantidade_Minima").ToString(), fonte, Brushes.Black, 350, 500);
+            e.Graphics.DrawString("Valor de Compra: " + dt.Rows[i].Field<double>("Valor_Compra").ToString(), fonte, Brushes.Black, 350, 550);
+            e.Graphics.DrawString("Valor de Venda: " + dt.Rows[i].Field<double>("Valor_venda").ToString(), fonte, Brushes.Black, 350, 600);
+            e.Graphics.DrawString("Data de Fabricação: " + dt.Rows[i].Field<DateTime>("Data_Fab").ToString(), fonte, Brushes.Black, 350, 650);
+            e.Graphics.DrawString("Data de Validade: " + dt.Rows[i].Field<DateTime>("Data_Val").ToString(), fonte, Brushes.Black, 350, 700);
+            e.Graphics.DrawString("Descrição: \n" + dt.Rows[i].Field<string>("Descricao"), fonte, Brushes.Black, 350, 750);
+            e.Graphics.DrawString("Unidade: " + dt.Rows[i].Field<string>("Unidade"), fonte, Brushes.Black, 350, 850);
             if (i < (dt.Rows.Count - 1))
             {
                 i++;
@@ -289,6 +289,41 @@ namespace Projeto_Cadastro
         {
             i = 0;
             printPreviewDialog1.ShowDialog();
+        }
+
+        private void btn_pesquisar_titulo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MySqlConnection conn = new MySqlConnection(MySqlClientString);
+                conn.Open();
+                DataTable dt = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM tb_cadastro WHERE Nome_Peca LIKE  '" + nome_Peca_Pesquisa.Text + "%'", conn);
+                da.Fill(dt);
+                dataGridView1.DataSource = dt;
+                txt_codigo.Text = dt.Rows[0].Field<int>("Codigo_ID").ToString();
+                txt_Cod_For.Text = dt.Rows[0].Field<int>("Codigo_FOR").ToString();
+                txt_Razao.Text = dt.Rows[0].Field<string>("Nome_Razao").ToString();
+                txt_Fantasia.Text = dt.Rows[0].Field<string>("Nome_Fts").ToString();
+                dt_cad.Text = dt.Rows[0].Field<DateTime>("Data").ToString();
+                cmb_Status.Text = dt.Rows[0].Field<string>("Status");
+                txt_nome.Text = dt.Rows[0].Field<string>("Nome_Peca");
+                txt_tamanho.Text = dt.Rows[0].Field<double>("Tamanho").ToString();
+                txt_peso.Text = dt.Rows[0].Field<double>("Peso").ToString();
+                txt_volume.Text = dt.Rows[0].Field<double>("Volume").ToString();
+                txt_quantidade.Text = dt.Rows[0].Field<int>("Quantidade").ToString();
+                txt_quant_min.Text = dt.Rows[0].Field<int>("Quantidade_Minima").ToString();
+                txt_valorCompra.Text = dt.Rows[0].Field<double>("Valor_Compra").ToString();
+                txt_valorVenda.Text = dt.Rows[0].Field<double>("Valor_venda").ToString();
+                dt_fab.Text = dt.Rows[0].Field<DateTime>("Data_Fab").ToString();
+                dt_val.Text = dt.Rows[0].Field<DateTime>("Data_Val").ToString();
+                txt_descricao.Text = dt.Rows[0].Field<string>("Descricao");
+                cmb_unidade.Text = dt.Rows[0].Field<string>("Unidade");
+            }
+            catch
+            {
+                MessageBox.Show("Produto não cadastrado!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
