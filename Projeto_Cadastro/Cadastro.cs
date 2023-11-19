@@ -389,11 +389,6 @@ namespace Projeto_Cadastro
             btn_carregar.Image = Properties.Resources.load_animado_unscreen;
         }
 
-        private void btn_pesquisar_titulo_MouseMove(object sender, MouseEventArgs e)
-        {
-
-        }
-
         private void btn_relatorio_MouseDown(object sender, MouseEventArgs e)
         {
             btn_relatorio.Image = Properties.Resources.impressora;

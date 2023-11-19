@@ -1035,7 +1035,6 @@
             this.btn_pesquisar_titulo.TabStop = false;
             this.guna2HtmlToolTip1.SetToolTip(this.btn_pesquisar_titulo, "Pesquisar");
             this.btn_pesquisar_titulo.Click += new System.EventHandler(this.btn_pesquisar_titulo_Click);
-            this.btn_pesquisar_titulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_pesquisar_titulo_MouseMove);
             // 
             // pic_image
             // 
