@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
@@ -331,6 +332,8 @@ namespace Projeto_Cadastro
             dgv_lista.Columns.Clear();
             txt_pesquisar.Clear();
             txt_pesquisar.Focus();
+            btn_carregar.Image = Properties.Resources.giro;
+            btn_relatorio.Image = Properties.Resources.impressora_estatico;
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)
@@ -345,6 +348,54 @@ namespace Projeto_Cadastro
             DialogResult dialogo = Msg_Exit.Show();
             if (dialogo == DialogResult.Yes)
                 Application.Exit();
+        }
+
+        private void btn_Pesquisar_Nome_MouseMove(object sender, MouseEventArgs e)
+        {
+            btn_Pesquisar_Nome.Size = new Size(50, 50);
+        }
+
+        private void btn_Pesquisar_Nome_MouseLeave(object sender, EventArgs e)
+        {
+            btn_Pesquisar_Nome.Size = new Size(40, 40);
+
+        }
+
+        private void guna2ControlBox3_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogo = Msg_Exit3.Show();
+            if (dialogo == DialogResult.Yes)
+                Application.Exit();
+        }
+
+        private void pct_Insert_MouseMove(object sender, MouseEventArgs e)
+        {
+            pct_Insert.Size = new Size(50, 50);
+        }
+
+        private void pct_Insert_MouseLeave(object sender, EventArgs e)
+        {
+            pct_Insert.Size = new Size(40, 40);
+
+        }
+
+              private void btn_carregar_MouseClick(object sender, MouseEventArgs e)
+        {
+        }
+        int c = 0;
+        private void btn_carregar_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_carregar.Image = Properties.Resources.load_animado_unscreen;
+        }
+
+        private void btn_pesquisar_titulo_MouseMove(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void btn_relatorio_MouseDown(object sender, MouseEventArgs e)
+        {
+            btn_relatorio.Image = Properties.Resources.impressora;
         }
     }
 }

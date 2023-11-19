@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_quant_min = new System.Windows.Forms.TextBox();
@@ -55,14 +56,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btn_insert = new System.Windows.Forms.ToolStripButton();
-            this.btn_delete = new System.Windows.Forms.ToolStripButton();
-            this.btn_select = new System.Windows.Forms.ToolStripButton();
-            this.btn_update = new System.Windows.Forms.ToolStripButton();
-            this.btn_limpar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_Pesquisar_Nome = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
             this.nome_Peca_Pesquisa = new System.Windows.Forms.TextBox();
             this.txt_codigo = new System.Windows.Forms.TextBox();
@@ -85,8 +84,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.pct_Insert = new System.Windows.Forms.PictureBox();
             this.label25 = new System.Windows.Forms.Label();
             this.txt_Search_Razao = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -98,39 +97,46 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_Cod_For = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.txt_pesquisar = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.dgv_lista = new System.Windows.Forms.DataGridView();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.Msg_Exit = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.Msg_Exit2 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.Msg_Exit3 = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.btn_insert = new System.Windows.Forms.ToolStripButton();
+            this.btn_delete = new System.Windows.Forms.ToolStripButton();
+            this.btn_select = new System.Windows.Forms.ToolStripButton();
+            this.btn_update = new System.Windows.Forms.ToolStripButton();
+            this.btn_limpar = new System.Windows.Forms.ToolStripButton();
+            this.btn_Pesquisar_Nome = new System.Windows.Forms.PictureBox();
+            this.pct_Insert = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btn_pesquisar_titulo = new System.Windows.Forms.PictureBox();
             this.pic_image = new System.Windows.Forms.PictureBox();
             this.btn_relatorio = new System.Windows.Forms.PictureBox();
             this.btn_carregar = new System.Windows.Forms.PictureBox();
-            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
-            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.Msg_Exit = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.Msg_Exit2 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Pesquisar_Nome)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pct_Insert)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lista)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Pesquisar_Nome)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pct_Insert)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_pesquisar_titulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_relatorio)).BeginInit();
@@ -198,6 +204,24 @@
             this.tabPage1.Size = new System.Drawing.Size(769, 529);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Cadastro";
+            // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.BorderRadius = 12;
+            this.guna2ControlBox1.CustomClick = true;
+            this.guna2ControlBox1.CustomIconSize = 15F;
+            this.guna2ControlBox1.FillColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.guna2ControlBox1.ForeColor = System.Drawing.Color.Black;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(721, 0);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.PressedColor = System.Drawing.SystemColors.Highlight;
+            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox1.TabIndex = 128;
+            this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
             // 
             // label24
             // 
@@ -413,9 +437,13 @@
             this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_insert,
+            this.toolStripSeparator1,
             this.btn_delete,
+            this.toolStripSeparator2,
             this.btn_select,
+            this.toolStripSeparator3,
             this.btn_update,
+            this.toolStripSeparator4,
             this.btn_limpar});
             this.toolStrip1.Location = new System.Drawing.Point(3, 3);
             this.toolStrip1.Name = "toolStrip1";
@@ -423,55 +451,25 @@
             this.toolStrip1.TabIndex = 87;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // btn_insert
+            // toolStripSeparator1
             // 
-            this.btn_insert.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_insert.Image = ((System.Drawing.Image)(resources.GetObject("btn_insert.Image")));
-            this.btn_insert.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_insert.Name = "btn_insert";
-            this.btn_insert.Size = new System.Drawing.Size(23, 25);
-            this.btn_insert.Text = "btn_insert";
-            this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click_1);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 28);
             // 
-            // btn_delete
+            // toolStripSeparator2
             // 
-            this.btn_delete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_delete.Image = ((System.Drawing.Image)(resources.GetObject("btn_delete.Image")));
-            this.btn_delete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(23, 25);
-            this.btn_delete.Text = "toolStripButton2";
-            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click_1);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 28);
             // 
-            // btn_select
+            // toolStripSeparator3
             // 
-            this.btn_select.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_select.Image = ((System.Drawing.Image)(resources.GetObject("btn_select.Image")));
-            this.btn_select.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_select.Name = "btn_select";
-            this.btn_select.Size = new System.Drawing.Size(23, 25);
-            this.btn_select.Text = "toolStripButton3";
-            this.btn_select.Click += new System.EventHandler(this.btn_select_Click_1);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 28);
             // 
-            // btn_update
+            // toolStripSeparator4
             // 
-            this.btn_update.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_update.Image = ((System.Drawing.Image)(resources.GetObject("btn_update.Image")));
-            this.btn_update.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(23, 25);
-            this.btn_update.Text = "toolStripButton4";
-            this.btn_update.Click += new System.EventHandler(this.btn_update_Click_1);
-            // 
-            // btn_limpar
-            // 
-            this.btn_limpar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_limpar.Image = ((System.Drawing.Image)(resources.GetObject("btn_limpar.Image")));
-            this.btn_limpar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_limpar.Name = "btn_limpar";
-            this.btn_limpar.Size = new System.Drawing.Size(23, 25);
-            this.btn_limpar.Text = "toolStripButton5";
-            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click_1);
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 28);
             // 
             // label23
             // 
@@ -485,32 +483,25 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.groupBox1.Controls.Add(this.btn_Pesquisar_Nome);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.nome_Peca_Pesquisa);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Blue;
             this.groupBox1.Location = new System.Drawing.Point(441, 207);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(312, 53);
+            this.groupBox1.Size = new System.Drawing.Size(312, 69);
             this.groupBox1.TabIndex = 116;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa de Peças";
-            // 
-            // btn_Pesquisar_Nome
-            // 
-            this.btn_Pesquisar_Nome.Location = new System.Drawing.Point(255, 19);
-            this.btn_Pesquisar_Nome.Name = "btn_Pesquisar_Nome";
-            this.btn_Pesquisar_Nome.Size = new System.Drawing.Size(45, 26);
-            this.btn_Pesquisar_Nome.TabIndex = 39;
-            this.btn_Pesquisar_Nome.TabStop = false;
-            this.btn_Pesquisar_Nome.Click += new System.EventHandler(this.btn_Pesquisar_Nome_Click_1);
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.ForeColor = System.Drawing.Color.Black;
-            this.label20.Location = new System.Drawing.Point(12, 22);
+            this.label20.Location = new System.Drawing.Point(12, 31);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(50, 21);
             this.label20.TabIndex = 17;
@@ -519,7 +510,7 @@
             // nome_Peca_Pesquisa
             // 
             this.nome_Peca_Pesquisa.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nome_Peca_Pesquisa.Location = new System.Drawing.Point(72, 19);
+            this.nome_Peca_Pesquisa.Location = new System.Drawing.Point(72, 28);
             this.nome_Peca_Pesquisa.Name = "nome_Peca_Pesquisa";
             this.nome_Peca_Pesquisa.Size = new System.Drawing.Size(171, 29);
             this.nome_Peca_Pesquisa.TabIndex = 16;
@@ -573,7 +564,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Red;
-            this.label17.Location = new System.Drawing.Point(91, 168);
+            this.label17.Location = new System.Drawing.Point(89, 171);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(29, 20);
             this.label17.TabIndex = 111;
@@ -605,7 +596,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Red;
-            this.label16.Location = new System.Drawing.Point(203, 168);
+            this.label16.Location = new System.Drawing.Point(203, 172);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(29, 20);
             this.label16.TabIndex = 110;
@@ -739,6 +730,24 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Fornecedores";
             // 
+            // guna2ControlBox2
+            // 
+            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.BorderRadius = 12;
+            this.guna2ControlBox2.CustomClick = true;
+            this.guna2ControlBox2.CustomIconSize = 15F;
+            this.guna2ControlBox2.FillColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.guna2ControlBox2.ForeColor = System.Drawing.Color.Black;
+            this.guna2ControlBox2.IconColor = System.Drawing.Color.Black;
+            this.guna2ControlBox2.Location = new System.Drawing.Point(724, 0);
+            this.guna2ControlBox2.Name = "guna2ControlBox2";
+            this.guna2ControlBox2.PressedColor = System.Drawing.SystemColors.Highlight;
+            this.guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox2.TabIndex = 132;
+            this.guna2ControlBox2.Click += new System.EventHandler(this.guna2ControlBox2_Click);
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.pct_Insert);
@@ -748,19 +757,10 @@
             this.groupBox5.ForeColor = System.Drawing.Color.Blue;
             this.groupBox5.Location = new System.Drawing.Point(18, 82);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(312, 61);
+            this.groupBox5.Size = new System.Drawing.Size(312, 78);
             this.groupBox5.TabIndex = 131;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Pesquisa por Fornecedor";
-            // 
-            // pct_Insert
-            // 
-            this.pct_Insert.Location = new System.Drawing.Point(261, 28);
-            this.pct_Insert.Name = "pct_Insert";
-            this.pct_Insert.Size = new System.Drawing.Size(45, 26);
-            this.pct_Insert.TabIndex = 39;
-            this.pct_Insert.TabStop = false;
-            this.pct_Insert.Click += new System.EventHandler(this.pct_Insert_Click);
             // 
             // label25
             // 
@@ -857,11 +857,12 @@
             // tabPage3
             // 
             this.tabPage3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.tabPage3.Controls.Add(this.pictureBox1);
+            this.tabPage3.Controls.Add(this.guna2ControlBox3);
             this.tabPage3.Controls.Add(this.txt_pesquisar);
             this.tabPage3.Controls.Add(this.label26);
             this.tabPage3.Controls.Add(this.label27);
             this.tabPage3.Controls.Add(this.dgv_lista);
+            this.tabPage3.Controls.Add(this.pictureBox1);
             this.tabPage3.Controls.Add(this.btn_pesquisar_titulo);
             this.tabPage3.Controls.Add(this.pic_image);
             this.tabPage3.Controls.Add(this.btn_relatorio);
@@ -872,14 +873,23 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Relatório";
             // 
-            // pictureBox1
+            // guna2ControlBox3
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(483, 84);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.guna2ControlBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox3.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox3.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox3.BorderRadius = 12;
+            this.guna2ControlBox3.CustomClick = true;
+            this.guna2ControlBox3.CustomIconSize = 15F;
+            this.guna2ControlBox3.FillColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.guna2ControlBox3.ForeColor = System.Drawing.Color.Black;
+            this.guna2ControlBox3.IconColor = System.Drawing.Color.Black;
+            this.guna2ControlBox3.Location = new System.Drawing.Point(724, 0);
+            this.guna2ControlBox3.Name = "guna2ControlBox3";
+            this.guna2ControlBox3.PressedColor = System.Drawing.SystemColors.Highlight;
+            this.guna2ControlBox3.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox3.TabIndex = 129;
+            this.guna2ControlBox3.Click += new System.EventHandler(this.guna2ControlBox3_Click);
             // 
             // txt_pesquisar
             // 
@@ -903,7 +913,7 @@
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(202, 21);
+            this.label27.Location = new System.Drawing.Point(202, 15);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(419, 45);
             this.label27.TabIndex = 28;
@@ -917,44 +927,6 @@
             this.dgv_lista.Name = "dgv_lista";
             this.dgv_lista.Size = new System.Drawing.Size(753, 365);
             this.dgv_lista.TabIndex = 27;
-            // 
-            // btn_pesquisar_titulo
-            // 
-            this.btn_pesquisar_titulo.Location = new System.Drawing.Point(401, 84);
-            this.btn_pesquisar_titulo.Name = "btn_pesquisar_titulo";
-            this.btn_pesquisar_titulo.Size = new System.Drawing.Size(50, 50);
-            this.btn_pesquisar_titulo.TabIndex = 26;
-            this.btn_pesquisar_titulo.TabStop = false;
-            this.btn_pesquisar_titulo.Click += new System.EventHandler(this.btn_pesquisar_titulo_Click);
-            // 
-            // pic_image
-            // 
-            this.pic_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pic_image.Location = new System.Drawing.Point(648, 15);
-            this.pic_image.Name = "pic_image";
-            this.pic_image.Size = new System.Drawing.Size(50, 50);
-            this.pic_image.TabIndex = 25;
-            this.pic_image.TabStop = false;
-            // 
-            // btn_relatorio
-            // 
-            this.btn_relatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_relatorio.Location = new System.Drawing.Point(79, 21);
-            this.btn_relatorio.Name = "btn_relatorio";
-            this.btn_relatorio.Size = new System.Drawing.Size(50, 50);
-            this.btn_relatorio.TabIndex = 24;
-            this.btn_relatorio.TabStop = false;
-            this.btn_relatorio.Click += new System.EventHandler(this.btn_relatorio_Click);
-            // 
-            // btn_carregar
-            // 
-            this.btn_carregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_carregar.Location = new System.Drawing.Point(23, 21);
-            this.btn_carregar.Name = "btn_carregar";
-            this.btn_carregar.Size = new System.Drawing.Size(50, 50);
-            this.btn_carregar.TabIndex = 23;
-            this.btn_carregar.TabStop = false;
-            this.btn_carregar.Click += new System.EventHandler(this.btn_carregar_Click);
             // 
             // printDocument1
             // 
@@ -979,24 +951,6 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // guna2ControlBox1
-            // 
-            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox1.BorderRadius = 12;
-            this.guna2ControlBox1.CustomClick = true;
-            this.guna2ControlBox1.CustomIconSize = 15F;
-            this.guna2ControlBox1.FillColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.guna2ControlBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(721, 0);
-            this.guna2ControlBox1.Name = "guna2ControlBox1";
-            this.guna2ControlBox1.PressedColor = System.Drawing.SystemColors.Highlight;
-            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
-            this.guna2ControlBox1.TabIndex = 128;
-            this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
-            // 
             // Msg_Exit
             // 
             this.Msg_Exit.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OKCancel;
@@ -1004,25 +958,7 @@
             this.Msg_Exit.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
             this.Msg_Exit.Parent = this;
             this.Msg_Exit.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
-            this.Msg_Exit.Text = null;
-            // 
-            // guna2ControlBox2
-            // 
-            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox2.BorderColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox2.BorderRadius = 12;
-            this.guna2ControlBox2.CustomClick = true;
-            this.guna2ControlBox2.CustomIconSize = 15F;
-            this.guna2ControlBox2.FillColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.guna2ControlBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2ControlBox2.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(724, 0);
-            this.guna2ControlBox2.Name = "guna2ControlBox2";
-            this.guna2ControlBox2.PressedColor = System.Drawing.SystemColors.Highlight;
-            this.guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
-            this.guna2ControlBox2.TabIndex = 132;
-            this.guna2ControlBox2.Click += new System.EventHandler(this.guna2ControlBox2_Click);
+            this.Msg_Exit.Text = "Deseja encerrar a aplicação?";
             // 
             // Msg_Exit2
             // 
@@ -1031,7 +967,152 @@
             this.Msg_Exit2.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
             this.Msg_Exit2.Parent = this;
             this.Msg_Exit2.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
-            this.Msg_Exit2.Text = null;
+            this.Msg_Exit2.Text = "Deseja encerrar a aplicação?";
+            // 
+            // Msg_Exit3
+            // 
+            this.Msg_Exit3.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OKCancel;
+            this.Msg_Exit3.Caption = null;
+            this.Msg_Exit3.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
+            this.Msg_Exit3.Parent = this;
+            this.Msg_Exit3.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.Msg_Exit3.Text = "Deseja encerrar a aplicação?";
+            // 
+            // btn_insert
+            // 
+            this.btn_insert.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_insert.Image = ((System.Drawing.Image)(resources.GetObject("btn_insert.Image")));
+            this.btn_insert.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_insert.Name = "btn_insert";
+            this.btn_insert.Size = new System.Drawing.Size(23, 25);
+            this.btn_insert.Text = "btn_insert";
+            this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click_1);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_delete.Image = ((System.Drawing.Image)(resources.GetObject("btn_delete.Image")));
+            this.btn_delete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(23, 25);
+            this.btn_delete.Text = "toolStripButton2";
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click_1);
+            // 
+            // btn_select
+            // 
+            this.btn_select.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_select.Image = ((System.Drawing.Image)(resources.GetObject("btn_select.Image")));
+            this.btn_select.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_select.Name = "btn_select";
+            this.btn_select.Size = new System.Drawing.Size(23, 25);
+            this.btn_select.Text = "toolStripButton3";
+            this.btn_select.Click += new System.EventHandler(this.btn_select_Click_1);
+            // 
+            // btn_update
+            // 
+            this.btn_update.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_update.Image = ((System.Drawing.Image)(resources.GetObject("btn_update.Image")));
+            this.btn_update.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(23, 25);
+            this.btn_update.Text = "toolStripButton4";
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click_1);
+            // 
+            // btn_limpar
+            // 
+            this.btn_limpar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_limpar.Image = ((System.Drawing.Image)(resources.GetObject("btn_limpar.Image")));
+            this.btn_limpar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_limpar.Name = "btn_limpar";
+            this.btn_limpar.Size = new System.Drawing.Size(23, 25);
+            this.btn_limpar.Text = "toolStripButton5";
+            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click_1);
+            // 
+            // btn_Pesquisar_Nome
+            // 
+            this.btn_Pesquisar_Nome.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Pesquisar_Nome.Image = global::Projeto_Cadastro.Properties.Resources.lupa;
+            this.btn_Pesquisar_Nome.Location = new System.Drawing.Point(249, 13);
+            this.btn_Pesquisar_Nome.Name = "btn_Pesquisar_Nome";
+            this.btn_Pesquisar_Nome.Size = new System.Drawing.Size(40, 40);
+            this.btn_Pesquisar_Nome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btn_Pesquisar_Nome.TabIndex = 39;
+            this.btn_Pesquisar_Nome.TabStop = false;
+            this.btn_Pesquisar_Nome.Click += new System.EventHandler(this.btn_Pesquisar_Nome_Click_1);
+            this.btn_Pesquisar_Nome.MouseLeave += new System.EventHandler(this.btn_Pesquisar_Nome_MouseLeave);
+            this.btn_Pesquisar_Nome.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_Pesquisar_Nome_MouseMove);
+            // 
+            // pct_Insert
+            // 
+            this.pct_Insert.Image = global::Projeto_Cadastro.Properties.Resources.save2;
+            this.pct_Insert.Location = new System.Drawing.Point(253, 15);
+            this.pct_Insert.Name = "pct_Insert";
+            this.pct_Insert.Size = new System.Drawing.Size(40, 40);
+            this.pct_Insert.TabIndex = 39;
+            this.pct_Insert.TabStop = false;
+            this.pct_Insert.Click += new System.EventHandler(this.pct_Insert_Click);
+            this.pct_Insert.MouseLeave += new System.EventHandler(this.pct_Insert_MouseLeave);
+            this.pct_Insert.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pct_Insert_MouseMove);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Projeto_Cadastro.Properties.Resources.clear;
+            this.pictureBox1.Location = new System.Drawing.Point(459, 100);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btn_pesquisar_titulo
+            // 
+            this.btn_pesquisar_titulo.Image = global::Projeto_Cadastro.Properties.Resources.lupa;
+            this.btn_pesquisar_titulo.Location = new System.Drawing.Point(390, 100);
+            this.btn_pesquisar_titulo.Name = "btn_pesquisar_titulo";
+            this.btn_pesquisar_titulo.Size = new System.Drawing.Size(50, 50);
+            this.btn_pesquisar_titulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btn_pesquisar_titulo.TabIndex = 26;
+            this.btn_pesquisar_titulo.TabStop = false;
+            this.btn_pesquisar_titulo.Click += new System.EventHandler(this.btn_pesquisar_titulo_Click);
+            this.btn_pesquisar_titulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_pesquisar_titulo_MouseMove);
+            // 
+            // pic_image
+            // 
+            this.pic_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pic_image.Image = global::Projeto_Cadastro.Properties.Resources.engrenagem;
+            this.pic_image.Location = new System.Drawing.Point(648, 15);
+            this.pic_image.Name = "pic_image";
+            this.pic_image.Size = new System.Drawing.Size(50, 50);
+            this.pic_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_image.TabIndex = 25;
+            this.pic_image.TabStop = false;
+            // 
+            // btn_relatorio
+            // 
+            this.btn_relatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_relatorio.Image = global::Projeto_Cadastro.Properties.Resources.impressora_estatico;
+            this.btn_relatorio.Location = new System.Drawing.Point(94, 21);
+            this.btn_relatorio.Name = "btn_relatorio";
+            this.btn_relatorio.Size = new System.Drawing.Size(50, 50);
+            this.btn_relatorio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btn_relatorio.TabIndex = 24;
+            this.btn_relatorio.TabStop = false;
+            this.btn_relatorio.Click += new System.EventHandler(this.btn_relatorio_Click);
+            this.btn_relatorio.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_relatorio_MouseDown);
+            // 
+            // btn_carregar
+            // 
+            this.btn_carregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_carregar.Image = global::Projeto_Cadastro.Properties.Resources.giro;
+            this.btn_carregar.Location = new System.Drawing.Point(23, 21);
+            this.btn_carregar.Name = "btn_carregar";
+            this.btn_carregar.Size = new System.Drawing.Size(50, 50);
+            this.btn_carregar.TabIndex = 23;
+            this.btn_carregar.TabStop = false;
+            this.btn_carregar.Click += new System.EventHandler(this.btn_carregar_Click);
+            this.btn_carregar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_carregar_MouseClick);
+            this.btn_carregar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_carregar_MouseDown);
             // 
             // Cadastro
             // 
@@ -1051,7 +1132,6 @@
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Pesquisar_Nome)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.toolStrip2.ResumeLayout(false);
@@ -1062,13 +1142,14 @@
             this.tabPage2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pct_Insert)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lista)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Pesquisar_Nome)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pct_Insert)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_pesquisar_titulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_image)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_relatorio)).EndInit();
@@ -1157,12 +1238,18 @@
         private System.Windows.Forms.PictureBox btn_carregar;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2MessageDialog Msg_Exit;
         private Guna.UI2.WinForms.Guna2MessageDialog Msg_Exit2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
+        private Guna.UI2.WinForms.Guna2MessageDialog Msg_Exit3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
