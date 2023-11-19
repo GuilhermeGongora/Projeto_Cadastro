@@ -56,12 +56,18 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btn_insert = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_delete = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_select = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_update = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.btn_limpar = new System.Windows.Forms.ToolStripButton();
             this.label23 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_Pesquisar_Nome = new System.Windows.Forms.PictureBox();
             this.label20 = new System.Windows.Forms.Label();
             this.nome_Peca_Pesquisa = new System.Windows.Forms.TextBox();
             this.txt_codigo = new System.Windows.Forms.TextBox();
@@ -86,6 +92,7 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.pct_Insert = new System.Windows.Forms.PictureBox();
             this.label25 = new System.Windows.Forms.Label();
             this.txt_Search_Razao = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -102,40 +109,34 @@
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.dgv_lista = new System.Windows.Forms.DataGridView();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_pesquisar_titulo = new System.Windows.Forms.PictureBox();
+            this.pic_image = new System.Windows.Forms.PictureBox();
+            this.btn_relatorio = new System.Windows.Forms.PictureBox();
+            this.btn_carregar = new System.Windows.Forms.PictureBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.Msg_Exit = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.Msg_Exit2 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.Msg_Exit3 = new Guna.UI2.WinForms.Guna2MessageDialog();
-            this.btn_insert = new System.Windows.Forms.ToolStripButton();
-            this.btn_delete = new System.Windows.Forms.ToolStripButton();
-            this.btn_select = new System.Windows.Forms.ToolStripButton();
-            this.btn_update = new System.Windows.Forms.ToolStripButton();
-            this.btn_limpar = new System.Windows.Forms.ToolStripButton();
-            this.btn_Pesquisar_Nome = new System.Windows.Forms.PictureBox();
-            this.pct_Insert = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_pesquisar_titulo = new System.Windows.Forms.PictureBox();
-            this.pic_image = new System.Windows.Forms.PictureBox();
-            this.btn_relatorio = new System.Windows.Forms.PictureBox();
-            this.btn_carregar = new System.Windows.Forms.PictureBox();
+            this.guna2HtmlToolTip1 = new Guna.UI2.WinForms.Guna2HtmlToolTip();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Pesquisar_Nome)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pct_Insert)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lista)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Pesquisar_Nome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pct_Insert)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_pesquisar_titulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_image)).BeginInit();
@@ -451,25 +452,80 @@
             this.toolStrip1.TabIndex = 87;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // btn_insert
+            // 
+            this.btn_insert.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_insert.Image = ((System.Drawing.Image)(resources.GetObject("btn_insert.Image")));
+            this.btn_insert.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_insert.Name = "btn_insert";
+            this.btn_insert.Size = new System.Drawing.Size(23, 25);
+            this.btn_insert.Text = "btn_insert";
+            this.btn_insert.ToolTipText = "Salvar";
+            this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click_1);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 28);
+            // 
+            // btn_delete
+            // 
+            this.btn_delete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_delete.Image = ((System.Drawing.Image)(resources.GetObject("btn_delete.Image")));
+            this.btn_delete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_delete.Name = "btn_delete";
+            this.btn_delete.Size = new System.Drawing.Size(23, 25);
+            this.btn_delete.Text = "toolStripButton2";
+            this.btn_delete.ToolTipText = "Deletar";
+            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click_1);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 28);
             // 
+            // btn_select
+            // 
+            this.btn_select.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_select.Image = ((System.Drawing.Image)(resources.GetObject("btn_select.Image")));
+            this.btn_select.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_select.Name = "btn_select";
+            this.btn_select.Size = new System.Drawing.Size(23, 25);
+            this.btn_select.Text = "toolStripButton3";
+            this.btn_select.ToolTipText = "Selecionar";
+            this.btn_select.Click += new System.EventHandler(this.btn_select_Click_1);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 28);
             // 
+            // btn_update
+            // 
+            this.btn_update.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_update.Image = ((System.Drawing.Image)(resources.GetObject("btn_update.Image")));
+            this.btn_update.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(23, 25);
+            this.btn_update.Text = "toolStripButton4";
+            this.btn_update.ToolTipText = "Atualizar";
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click_1);
+            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 28);
+            // 
+            // btn_limpar
+            // 
+            this.btn_limpar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_limpar.Image = ((System.Drawing.Image)(resources.GetObject("btn_limpar.Image")));
+            this.btn_limpar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_limpar.Name = "btn_limpar";
+            this.btn_limpar.Size = new System.Drawing.Size(23, 25);
+            this.btn_limpar.Text = "toolStripButton5";
+            this.btn_limpar.ToolTipText = "Limpar";
+            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click_1);
             // 
             // label23
             // 
@@ -496,6 +552,21 @@
             this.groupBox1.TabIndex = 116;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Pesquisa de Peças";
+            // 
+            // btn_Pesquisar_Nome
+            // 
+            this.btn_Pesquisar_Nome.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Pesquisar_Nome.Image = global::Projeto_Cadastro.Properties.Resources.lupa;
+            this.btn_Pesquisar_Nome.Location = new System.Drawing.Point(249, 13);
+            this.btn_Pesquisar_Nome.Name = "btn_Pesquisar_Nome";
+            this.btn_Pesquisar_Nome.Size = new System.Drawing.Size(40, 40);
+            this.btn_Pesquisar_Nome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btn_Pesquisar_Nome.TabIndex = 39;
+            this.btn_Pesquisar_Nome.TabStop = false;
+            this.guna2HtmlToolTip1.SetToolTip(this.btn_Pesquisar_Nome, "Pesquisar");
+            this.btn_Pesquisar_Nome.Click += new System.EventHandler(this.btn_Pesquisar_Nome_Click_1);
+            this.btn_Pesquisar_Nome.MouseLeave += new System.EventHandler(this.btn_Pesquisar_Nome_MouseLeave);
+            this.btn_Pesquisar_Nome.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_Pesquisar_Nome_MouseMove);
             // 
             // label20
             // 
@@ -762,6 +833,19 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Pesquisa por Fornecedor";
             // 
+            // pct_Insert
+            // 
+            this.pct_Insert.Image = global::Projeto_Cadastro.Properties.Resources.save2;
+            this.pct_Insert.Location = new System.Drawing.Point(253, 15);
+            this.pct_Insert.Name = "pct_Insert";
+            this.pct_Insert.Size = new System.Drawing.Size(40, 40);
+            this.pct_Insert.TabIndex = 39;
+            this.pct_Insert.TabStop = false;
+            this.guna2HtmlToolTip1.SetToolTip(this.pct_Insert, "Salvar");
+            this.pct_Insert.Click += new System.EventHandler(this.pct_Insert_Click);
+            this.pct_Insert.MouseLeave += new System.EventHandler(this.pct_Insert_MouseLeave);
+            this.pct_Insert.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pct_Insert_MouseMove);
+            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -928,6 +1012,70 @@
             this.dgv_lista.Size = new System.Drawing.Size(753, 365);
             this.dgv_lista.TabIndex = 27;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Projeto_Cadastro.Properties.Resources.clear;
+            this.pictureBox1.Location = new System.Drawing.Point(459, 100);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            this.guna2HtmlToolTip1.SetToolTip(this.pictureBox1, "Limpar");
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btn_pesquisar_titulo
+            // 
+            this.btn_pesquisar_titulo.Image = global::Projeto_Cadastro.Properties.Resources.lupa;
+            this.btn_pesquisar_titulo.Location = new System.Drawing.Point(390, 100);
+            this.btn_pesquisar_titulo.Name = "btn_pesquisar_titulo";
+            this.btn_pesquisar_titulo.Size = new System.Drawing.Size(50, 50);
+            this.btn_pesquisar_titulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btn_pesquisar_titulo.TabIndex = 26;
+            this.btn_pesquisar_titulo.TabStop = false;
+            this.guna2HtmlToolTip1.SetToolTip(this.btn_pesquisar_titulo, "Pesquisar");
+            this.btn_pesquisar_titulo.Click += new System.EventHandler(this.btn_pesquisar_titulo_Click);
+            this.btn_pesquisar_titulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_pesquisar_titulo_MouseMove);
+            // 
+            // pic_image
+            // 
+            this.pic_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pic_image.Image = global::Projeto_Cadastro.Properties.Resources.engrenagem;
+            this.pic_image.Location = new System.Drawing.Point(648, 15);
+            this.pic_image.Name = "pic_image";
+            this.pic_image.Size = new System.Drawing.Size(50, 50);
+            this.pic_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_image.TabIndex = 25;
+            this.pic_image.TabStop = false;
+            // 
+            // btn_relatorio
+            // 
+            this.btn_relatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_relatorio.Image = global::Projeto_Cadastro.Properties.Resources.impressora_estatico;
+            this.btn_relatorio.Location = new System.Drawing.Point(94, 21);
+            this.btn_relatorio.Name = "btn_relatorio";
+            this.btn_relatorio.Size = new System.Drawing.Size(50, 50);
+            this.btn_relatorio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btn_relatorio.TabIndex = 24;
+            this.btn_relatorio.TabStop = false;
+            this.guna2HtmlToolTip1.SetToolTip(this.btn_relatorio, "Imprimir");
+            this.btn_relatorio.Click += new System.EventHandler(this.btn_relatorio_Click);
+            this.btn_relatorio.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_relatorio_MouseDown);
+            // 
+            // btn_carregar
+            // 
+            this.btn_carregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_carregar.Image = global::Projeto_Cadastro.Properties.Resources.giro;
+            this.btn_carregar.Location = new System.Drawing.Point(23, 21);
+            this.btn_carregar.Name = "btn_carregar";
+            this.btn_carregar.Size = new System.Drawing.Size(50, 50);
+            this.btn_carregar.TabIndex = 23;
+            this.btn_carregar.TabStop = false;
+            this.guna2HtmlToolTip1.SetToolTip(this.btn_carregar, "Carregar");
+            this.btn_carregar.Click += new System.EventHandler(this.btn_carregar_Click);
+            this.btn_carregar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_carregar_MouseClick);
+            this.btn_carregar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_carregar_MouseDown);
+            // 
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
@@ -978,141 +1126,11 @@
             this.Msg_Exit3.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
             this.Msg_Exit3.Text = "Deseja encerrar a aplicação?";
             // 
-            // btn_insert
+            // guna2HtmlToolTip1
             // 
-            this.btn_insert.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_insert.Image = ((System.Drawing.Image)(resources.GetObject("btn_insert.Image")));
-            this.btn_insert.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_insert.Name = "btn_insert";
-            this.btn_insert.Size = new System.Drawing.Size(23, 25);
-            this.btn_insert.Text = "btn_insert";
-            this.btn_insert.Click += new System.EventHandler(this.btn_insert_Click_1);
-            // 
-            // btn_delete
-            // 
-            this.btn_delete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_delete.Image = ((System.Drawing.Image)(resources.GetObject("btn_delete.Image")));
-            this.btn_delete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_delete.Name = "btn_delete";
-            this.btn_delete.Size = new System.Drawing.Size(23, 25);
-            this.btn_delete.Text = "toolStripButton2";
-            this.btn_delete.Click += new System.EventHandler(this.btn_delete_Click_1);
-            // 
-            // btn_select
-            // 
-            this.btn_select.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_select.Image = ((System.Drawing.Image)(resources.GetObject("btn_select.Image")));
-            this.btn_select.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_select.Name = "btn_select";
-            this.btn_select.Size = new System.Drawing.Size(23, 25);
-            this.btn_select.Text = "toolStripButton3";
-            this.btn_select.Click += new System.EventHandler(this.btn_select_Click_1);
-            // 
-            // btn_update
-            // 
-            this.btn_update.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_update.Image = ((System.Drawing.Image)(resources.GetObject("btn_update.Image")));
-            this.btn_update.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_update.Name = "btn_update";
-            this.btn_update.Size = new System.Drawing.Size(23, 25);
-            this.btn_update.Text = "toolStripButton4";
-            this.btn_update.Click += new System.EventHandler(this.btn_update_Click_1);
-            // 
-            // btn_limpar
-            // 
-            this.btn_limpar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_limpar.Image = ((System.Drawing.Image)(resources.GetObject("btn_limpar.Image")));
-            this.btn_limpar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_limpar.Name = "btn_limpar";
-            this.btn_limpar.Size = new System.Drawing.Size(23, 25);
-            this.btn_limpar.Text = "toolStripButton5";
-            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click_1);
-            // 
-            // btn_Pesquisar_Nome
-            // 
-            this.btn_Pesquisar_Nome.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Pesquisar_Nome.Image = global::Projeto_Cadastro.Properties.Resources.lupa;
-            this.btn_Pesquisar_Nome.Location = new System.Drawing.Point(249, 13);
-            this.btn_Pesquisar_Nome.Name = "btn_Pesquisar_Nome";
-            this.btn_Pesquisar_Nome.Size = new System.Drawing.Size(40, 40);
-            this.btn_Pesquisar_Nome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btn_Pesquisar_Nome.TabIndex = 39;
-            this.btn_Pesquisar_Nome.TabStop = false;
-            this.btn_Pesquisar_Nome.Click += new System.EventHandler(this.btn_Pesquisar_Nome_Click_1);
-            this.btn_Pesquisar_Nome.MouseLeave += new System.EventHandler(this.btn_Pesquisar_Nome_MouseLeave);
-            this.btn_Pesquisar_Nome.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_Pesquisar_Nome_MouseMove);
-            // 
-            // pct_Insert
-            // 
-            this.pct_Insert.Image = global::Projeto_Cadastro.Properties.Resources.save2;
-            this.pct_Insert.Location = new System.Drawing.Point(253, 15);
-            this.pct_Insert.Name = "pct_Insert";
-            this.pct_Insert.Size = new System.Drawing.Size(40, 40);
-            this.pct_Insert.TabIndex = 39;
-            this.pct_Insert.TabStop = false;
-            this.pct_Insert.Click += new System.EventHandler(this.pct_Insert_Click);
-            this.pct_Insert.MouseLeave += new System.EventHandler(this.pct_Insert_MouseLeave);
-            this.pct_Insert.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pct_Insert_MouseMove);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Projeto_Cadastro.Properties.Resources.clear;
-            this.pictureBox1.Location = new System.Drawing.Point(459, 100);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // btn_pesquisar_titulo
-            // 
-            this.btn_pesquisar_titulo.Image = global::Projeto_Cadastro.Properties.Resources.lupa;
-            this.btn_pesquisar_titulo.Location = new System.Drawing.Point(390, 100);
-            this.btn_pesquisar_titulo.Name = "btn_pesquisar_titulo";
-            this.btn_pesquisar_titulo.Size = new System.Drawing.Size(50, 50);
-            this.btn_pesquisar_titulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btn_pesquisar_titulo.TabIndex = 26;
-            this.btn_pesquisar_titulo.TabStop = false;
-            this.btn_pesquisar_titulo.Click += new System.EventHandler(this.btn_pesquisar_titulo_Click);
-            this.btn_pesquisar_titulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btn_pesquisar_titulo_MouseMove);
-            // 
-            // pic_image
-            // 
-            this.pic_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pic_image.Image = global::Projeto_Cadastro.Properties.Resources.engrenagem;
-            this.pic_image.Location = new System.Drawing.Point(648, 15);
-            this.pic_image.Name = "pic_image";
-            this.pic_image.Size = new System.Drawing.Size(50, 50);
-            this.pic_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_image.TabIndex = 25;
-            this.pic_image.TabStop = false;
-            // 
-            // btn_relatorio
-            // 
-            this.btn_relatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_relatorio.Image = global::Projeto_Cadastro.Properties.Resources.impressora_estatico;
-            this.btn_relatorio.Location = new System.Drawing.Point(94, 21);
-            this.btn_relatorio.Name = "btn_relatorio";
-            this.btn_relatorio.Size = new System.Drawing.Size(50, 50);
-            this.btn_relatorio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btn_relatorio.TabIndex = 24;
-            this.btn_relatorio.TabStop = false;
-            this.btn_relatorio.Click += new System.EventHandler(this.btn_relatorio_Click);
-            this.btn_relatorio.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_relatorio_MouseDown);
-            // 
-            // btn_carregar
-            // 
-            this.btn_carregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_carregar.Image = global::Projeto_Cadastro.Properties.Resources.giro;
-            this.btn_carregar.Location = new System.Drawing.Point(23, 21);
-            this.btn_carregar.Name = "btn_carregar";
-            this.btn_carregar.Size = new System.Drawing.Size(50, 50);
-            this.btn_carregar.TabIndex = 23;
-            this.btn_carregar.TabStop = false;
-            this.btn_carregar.Click += new System.EventHandler(this.btn_carregar_Click);
-            this.btn_carregar.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btn_carregar_MouseClick);
-            this.btn_carregar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_carregar_MouseDown);
+            this.guna2HtmlToolTip1.AllowLinksHandling = true;
+            this.guna2HtmlToolTip1.IsBalloon = true;
+            this.guna2HtmlToolTip1.MaximumSize = new System.Drawing.Size(0, 0);
             // 
             // Cadastro
             // 
@@ -1132,6 +1150,7 @@
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Pesquisar_Nome)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.toolStrip2.ResumeLayout(false);
@@ -1142,13 +1161,12 @@
             this.tabPage2.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pct_Insert)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lista)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_Pesquisar_Nome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pct_Insert)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_pesquisar_titulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_image)).EndInit();
@@ -1250,6 +1268,7 @@
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
         private Guna.UI2.WinForms.Guna2MessageDialog Msg_Exit3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private Guna.UI2.WinForms.Guna2HtmlToolTip guna2HtmlToolTip1;
     }
 }
 
