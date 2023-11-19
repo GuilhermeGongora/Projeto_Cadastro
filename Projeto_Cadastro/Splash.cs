@@ -34,8 +34,9 @@ namespace Projeto_Cadastro
             else
             {
                 guna2CircleProgressBar1.Value += 1;
-                label1.Text = "Carregando..." + guna2CircleProgressBar1.Value.ToString() + "%";
+                label1.Text = "Carregando... " + guna2CircleProgressBar1.Value.ToString() + "%";
             }
         }
+
     }
 }

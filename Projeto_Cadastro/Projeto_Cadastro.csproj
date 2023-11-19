@@ -177,5 +177,17 @@
   <ItemGroup>
     <None Include="Resources\impressora.gif" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\The Best Technology.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Background %282%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
