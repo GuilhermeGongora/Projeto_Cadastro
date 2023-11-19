@@ -325,5 +325,6 @@ namespace Projeto_Cadastro
                 MessageBox.Show("Produto não cadastrado!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
     }
 }

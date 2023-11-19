@@ -846,6 +846,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.tabPage3.Controls.Add(this.pictureBox1);
             this.tabPage3.Controls.Add(this.txt_pesquisar);
             this.tabPage3.Controls.Add(this.label26);
@@ -860,11 +861,10 @@
             this.tabPage3.Size = new System.Drawing.Size(769, 529);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Relatório";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(463, 91);
+            this.pictureBox1.Location = new System.Drawing.Point(488, 91);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(50, 50);
             this.pictureBox1.TabIndex = 31;
@@ -872,7 +872,7 @@
             // 
             // txt_pesquisar
             // 
-            this.txt_pesquisar.Location = new System.Drawing.Point(222, 101);
+            this.txt_pesquisar.Location = new System.Drawing.Point(234, 101);
             this.txt_pesquisar.Name = "txt_pesquisar";
             this.txt_pesquisar.Size = new System.Drawing.Size(159, 20);
             this.txt_pesquisar.TabIndex = 30;
@@ -880,20 +880,20 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.Location = new System.Drawing.Point(29, 91);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(202, 30);
+            this.label26.Size = new System.Drawing.Size(217, 30);
             this.label26.TabIndex = 29;
             this.label26.Text = "Pesquisar por título: ";
             // 
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.Location = new System.Drawing.Point(138, 31);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(265, 30);
+            this.label27.Size = new System.Drawing.Size(278, 30);
             this.label27.TabIndex = 28;
             this.label27.Text = "Lista de Filmes cadastrados";
             // 
@@ -903,12 +903,12 @@
             this.dgv_lista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_lista.Location = new System.Drawing.Point(8, 156);
             this.dgv_lista.Name = "dgv_lista";
-            this.dgv_lista.Size = new System.Drawing.Size(734, 365);
+            this.dgv_lista.Size = new System.Drawing.Size(753, 365);
             this.dgv_lista.TabIndex = 27;
             // 
             // btn_pesquisar_titulo
             // 
-            this.btn_pesquisar_titulo.Location = new System.Drawing.Point(387, 91);
+            this.btn_pesquisar_titulo.Location = new System.Drawing.Point(412, 91);
             this.btn_pesquisar_titulo.Name = "btn_pesquisar_titulo";
             this.btn_pesquisar_titulo.Size = new System.Drawing.Size(50, 50);
             this.btn_pesquisar_titulo.TabIndex = 26;
@@ -918,7 +918,7 @@
             // pic_image
             // 
             this.pic_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pic_image.Location = new System.Drawing.Point(409, 21);
+            this.pic_image.Location = new System.Drawing.Point(422, 21);
             this.pic_image.Name = "pic_image";
             this.pic_image.Size = new System.Drawing.Size(50, 50);
             this.pic_image.TabIndex = 25;
