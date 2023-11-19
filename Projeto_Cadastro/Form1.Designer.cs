@@ -97,7 +97,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_Cod_For = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_pesquisar = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -108,6 +107,7 @@
             this.btn_carregar = new System.Windows.Forms.PictureBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -123,12 +123,12 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_pesquisar_titulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_relatorio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_carregar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -862,26 +862,19 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Relatório";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(488, 91);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
-            // 
             // txt_pesquisar
             // 
-            this.txt_pesquisar.Location = new System.Drawing.Point(234, 101);
+            this.txt_pesquisar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pesquisar.Location = new System.Drawing.Point(225, 105);
             this.txt_pesquisar.Name = "txt_pesquisar";
-            this.txt_pesquisar.Size = new System.Drawing.Size(159, 20);
+            this.txt_pesquisar.Size = new System.Drawing.Size(159, 29);
             this.txt_pesquisar.TabIndex = 30;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(29, 91);
+            this.label26.Location = new System.Drawing.Point(18, 101);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(217, 30);
             this.label26.TabIndex = 29;
@@ -890,12 +883,12 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(138, 31);
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(202, 21);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(278, 30);
+            this.label27.Size = new System.Drawing.Size(419, 45);
             this.label27.TabIndex = 28;
-            this.label27.Text = "Lista de Filmes cadastrados";
+            this.label27.Text = "Lista de Peças cadastradas.";
             // 
             // dgv_lista
             // 
@@ -908,7 +901,7 @@
             // 
             // btn_pesquisar_titulo
             // 
-            this.btn_pesquisar_titulo.Location = new System.Drawing.Point(412, 91);
+            this.btn_pesquisar_titulo.Location = new System.Drawing.Point(401, 84);
             this.btn_pesquisar_titulo.Name = "btn_pesquisar_titulo";
             this.btn_pesquisar_titulo.Size = new System.Drawing.Size(50, 50);
             this.btn_pesquisar_titulo.TabIndex = 26;
@@ -918,7 +911,7 @@
             // pic_image
             // 
             this.pic_image.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pic_image.Location = new System.Drawing.Point(422, 21);
+            this.pic_image.Location = new System.Drawing.Point(648, 15);
             this.pic_image.Name = "pic_image";
             this.pic_image.Size = new System.Drawing.Size(50, 50);
             this.pic_image.TabIndex = 25;
@@ -927,7 +920,7 @@
             // btn_relatorio
             // 
             this.btn_relatorio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_relatorio.Location = new System.Drawing.Point(82, 21);
+            this.btn_relatorio.Location = new System.Drawing.Point(79, 21);
             this.btn_relatorio.Name = "btn_relatorio";
             this.btn_relatorio.Size = new System.Drawing.Size(50, 50);
             this.btn_relatorio.TabIndex = 24;
@@ -937,7 +930,7 @@
             // btn_carregar
             // 
             this.btn_carregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_carregar.Location = new System.Drawing.Point(26, 21);
+            this.btn_carregar.Location = new System.Drawing.Point(23, 21);
             this.btn_carregar.Name = "btn_carregar";
             this.btn_carregar.Size = new System.Drawing.Size(50, 50);
             this.btn_carregar.TabIndex = 23;
@@ -959,6 +952,15 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             this.printPreviewDialog1.Load += new System.EventHandler(this.printPreviewDialog1_Load);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(483, 84);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Form1
             // 
@@ -993,12 +995,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_pesquisar_titulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_image)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_relatorio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_carregar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1073,7 +1075,6 @@
         private System.Windows.Forms.PictureBox pct_Insert;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox txt_Search_Razao;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txt_pesquisar;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
@@ -1084,6 +1085,7 @@
         private System.Windows.Forms.PictureBox btn_carregar;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

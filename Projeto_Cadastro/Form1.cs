@@ -326,5 +326,11 @@ namespace Projeto_Cadastro
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            dgv_lista.Columns.Clear();
+            txt_pesquisar.Clear();
+            txt_pesquisar.Focus();
+        }
     }
 }
