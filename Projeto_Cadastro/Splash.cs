@@ -19,7 +19,23 @@ namespace Projeto_Cadastro
 
         private void Splash_Load(object sender, EventArgs e)
         {
+            timer1.Start();
+        }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (guna2CircleProgressBar1.Value == 100)
+            {
+                timer1.Stop();
+                Cadastro cadastro = new Cadastro();
+                cadastro.Show();
+                this.Hide();
+            }
+            else
+            {
+                guna2CircleProgressBar1.Value += 1;
+                label1.Text = "Carregando..." + guna2CircleProgressBar1.Value.ToString() + "%";
+            }
         }
     }
 }

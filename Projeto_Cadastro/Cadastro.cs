@@ -12,11 +12,11 @@ using MySql.Data;
 using MySql.Data.MySqlClient;
 namespace Projeto_Cadastro
 {
-	public partial class Form1 : Form
+	public partial class Cadastro : Form
 	{
 		string MySqlClientString = "Server = localhost; Port = 3306;" +
 "User Id = root; Database = bd_empresa; SSL Mode = 0; convert zero datetime=True";
-		public Form1()
+		public Cadastro()
 		{
 			InitializeComponent();
 		}
@@ -331,6 +331,20 @@ namespace Projeto_Cadastro
             dgv_lista.Columns.Clear();
             txt_pesquisar.Clear();
             txt_pesquisar.Focus();
+        }
+
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogo = Msg_Exit.Show();
+            if (dialogo == DialogResult.Yes)
+                Application.Exit();
+        }
+
+        private void guna2ControlBox2_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogo = Msg_Exit.Show();
+            if (dialogo == DialogResult.Yes)
+                Application.Exit();
         }
     }
 }

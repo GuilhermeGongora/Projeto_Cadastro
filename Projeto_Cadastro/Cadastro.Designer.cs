@@ -1,6 +1,6 @@
 ﻿namespace Projeto_Cadastro
 {
-    partial class Form1
+    partial class Cadastro
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.label24 = new System.Windows.Forms.Label();
@@ -98,6 +98,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_Cod_For = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.txt_pesquisar = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -108,8 +109,11 @@
             this.btn_carregar = new System.Windows.Forms.PictureBox();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.Msg_Exit = new Guna.UI2.WinForms.Guna2MessageDialog();
+            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.Msg_Exit2 = new Guna.UI2.WinForms.Guna2MessageDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -125,12 +129,12 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_pesquisar_titulo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_relatorio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_carregar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -148,6 +152,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage1.Controls.Add(this.guna2ControlBox1);
             this.tabPage1.Controls.Add(this.label24);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.txt_quant_min);
@@ -718,6 +723,7 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tabPage2.Controls.Add(this.guna2ControlBox2);
             this.tabPage2.Controls.Add(this.groupBox5);
             this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Controls.Add(this.lbl_fantasia);
@@ -866,6 +872,15 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Relatório";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(483, 84);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // txt_pesquisar
             // 
             this.txt_pesquisar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -957,15 +972,6 @@
             this.printPreviewDialog1.Visible = false;
             this.printPreviewDialog1.Load += new System.EventHandler(this.printPreviewDialog1_Load);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(483, 84);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // guna2BorderlessForm1
             // 
             this.guna2BorderlessForm1.BorderRadius = 12;
@@ -973,7 +979,61 @@
             this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
             this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
-            // Form1
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.BorderRadius = 12;
+            this.guna2ControlBox1.CustomClick = true;
+            this.guna2ControlBox1.CustomIconSize = 15F;
+            this.guna2ControlBox1.FillColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.guna2ControlBox1.ForeColor = System.Drawing.Color.Black;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.Black;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(721, 0);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.PressedColor = System.Drawing.SystemColors.Highlight;
+            this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox1.TabIndex = 128;
+            this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
+            // 
+            // Msg_Exit
+            // 
+            this.Msg_Exit.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OKCancel;
+            this.Msg_Exit.Caption = null;
+            this.Msg_Exit.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
+            this.Msg_Exit.Parent = this;
+            this.Msg_Exit.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.Msg_Exit.Text = null;
+            // 
+            // guna2ControlBox2
+            // 
+            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.BorderColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.BorderRadius = 12;
+            this.guna2ControlBox2.CustomClick = true;
+            this.guna2ControlBox2.CustomIconSize = 15F;
+            this.guna2ControlBox2.FillColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.guna2ControlBox2.ForeColor = System.Drawing.Color.Black;
+            this.guna2ControlBox2.IconColor = System.Drawing.Color.Black;
+            this.guna2ControlBox2.Location = new System.Drawing.Point(724, 0);
+            this.guna2ControlBox2.Name = "guna2ControlBox2";
+            this.guna2ControlBox2.PressedColor = System.Drawing.SystemColors.Highlight;
+            this.guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
+            this.guna2ControlBox2.TabIndex = 132;
+            this.guna2ControlBox2.Click += new System.EventHandler(this.guna2ControlBox2_Click);
+            // 
+            // Msg_Exit2
+            // 
+            this.Msg_Exit2.Buttons = Guna.UI2.WinForms.MessageDialogButtons.OKCancel;
+            this.Msg_Exit2.Caption = null;
+            this.Msg_Exit2.Icon = Guna.UI2.WinForms.MessageDialogIcon.Question;
+            this.Msg_Exit2.Parent = this;
+            this.Msg_Exit2.Style = Guna.UI2.WinForms.MessageDialogStyle.Dark;
+            this.Msg_Exit2.Text = null;
+            // 
+            // Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -981,7 +1041,7 @@
             this.ClientSize = new System.Drawing.Size(777, 555);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "Cadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Peças para Empilhadeiras";
             this.tabControl1.ResumeLayout(false);
@@ -1007,12 +1067,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_lista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_pesquisar_titulo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_image)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_relatorio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btn_carregar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1099,6 +1159,10 @@
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
+        private Guna.UI2.WinForms.Guna2MessageDialog Msg_Exit;
+        private Guna.UI2.WinForms.Guna2MessageDialog Msg_Exit2;
     }
 }
 
