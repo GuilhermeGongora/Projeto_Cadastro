@@ -26,7 +26,7 @@ namespace Projeto_Cadastro
         {
             try
             {
-                if (txt_codigo.Text == "" || txt_Cod_For.Text == "" || txt_Razao.Text == "" || lbl_fantasia.Text == "")
+                if (txt_codigo.Text == "" || txt_Cod_For.Text == "" || txt_Razao.Text == "" || txt_Fantasia.Text == "")
                 {
                     MessageBox.Show("Não foi possível cadastrar!", "Alerta",
     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -139,22 +139,30 @@ namespace Projeto_Cadastro
         {
             try
             {
-                string sql = "UPDATE tb_cadastro SET Nome_Razao = '" + txt_Razao.Text+ "', Nome_Fts = '" + txt_Fantasia.Text  + "', Data = '" + dt_cad.Text + "', Status = '" + cmb_Status.Text + "', Nome_Peca = '" + txt_nome.Text + "', Tamanho = '" + txt_tamanho.Text +
-                    "', Peso = '" + txt_peso.Text + "', Volume = '" + txt_volume.Text + "', Quantidade = '" + txt_quantidade.Text + "', Quantidade_Minima = '"
-                    + txt_quant_min.Text + "', Valor_Compra = '" + txt_valorCompra.Text + "', Valor_Venda = '" + txt_valorVenda.Text + "', Data_Fab = '" +dt_fab.Text + "', Data_Val = '" + dt_val.Text + "', Descricao = '" + txt_descricao.Text
-                    + "', Unidade = '" + cmb_unidade.Text + "' WHERE Codigo_ID = '" + txt_codigo.Text + "'";
-                MySqlConnection conn = new MySqlConnection(MySqlClientString);
-                MySqlCommand cmd = new MySqlCommand();
-                conn.Open();
-                cmd.Connection = conn;
-                cmd.CommandText = sql;
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Peça alterada com sucesso!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //btn_novo_Click)btn_novo, e);
+                if (txt_codigo.Text == "" || txt_Cod_For.Text == "" || txt_Razao.Text == "" || txt_Fantasia.Text == "")
+                {
+                    MessageBox.Show("Não foi possível realizar a alteração!", "Alerta",
+    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                 string sql = "UPDATE tb_cadastro SET Nome_Razao = '" + txt_Razao.Text+ "', Nome_Fts = '" + txt_Fantasia.Text  + "', Data = '" + dt_cad.Text + "', Status = '" + cmb_Status.Text + "', Nome_Peca = '" + txt_nome.Text + "', Tamanho = '" + txt_tamanho.Text +
+                 "', Peso = '" + txt_peso.Text + "', Volume = '" + txt_volume.Text + "', Quantidade = '" + txt_quantidade.Text + "', Quantidade_Minima = '"
+                  + txt_quant_min.Text + "', Valor_Compra = '" + txt_valorCompra.Text + "', Valor_Venda = '" + txt_valorVenda.Text + "', Data_Fab = '" +dt_fab.Text + "', Data_Val = '" + dt_val.Text + "', Descricao = '" + txt_descricao.Text
+                  + "', Unidade = '" + cmb_unidade.Text + "' WHERE Codigo_ID = '" + txt_codigo.Text + "'";
+                   MySqlConnection conn = new MySqlConnection(MySqlClientString);
+                   MySqlCommand cmd = new MySqlCommand();
+                  conn.Open();
+                  cmd.Connection = conn;
+                  cmd.CommandText = sql;
+                  cmd.ExecuteNonQuery();
+                  MessageBox.Show("Peça alterada com sucesso!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+               
             }
             catch
             {
-                MessageBox.Show("Não foi possível alterar o filme", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Não foi possível alterar o produto", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -301,9 +309,9 @@ namespace Projeto_Cadastro
                 MySqlConnection conn = new MySqlConnection(MySqlClientString);
                 conn.Open();
                 DataTable dt = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM tb_cadastro WHERE Nome_Peca LIKE  '" + nome_Peca_Pesquisa.Text + "%'", conn);
+                MySqlDataAdapter da = new MySqlDataAdapter("SELECT * FROM tb_cadastro WHERE Nome_Peca LIKE  '" + txt_pesquisar.Text + "%'", conn);
                 da.Fill(dt);
-                dataGridView1.DataSource = dt;
+                dgv_lista.DataSource = dt;
                 txt_codigo.Text = dt.Rows[0].Field<int>("Codigo_ID").ToString();
                 txt_Cod_For.Text = dt.Rows[0].Field<int>("Codigo_FOR").ToString();
                 txt_Razao.Text = dt.Rows[0].Field<string>("Nome_Razao").ToString();
